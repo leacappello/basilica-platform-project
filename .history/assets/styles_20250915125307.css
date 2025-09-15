@@ -215,12 +215,10 @@ a:hover{text-decoration:underline}
 .tabella-orari{
   width:100%;
   border-collapse:collapse;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
-.orari th,.orari td{
-  padding:.5rem;
-  border-bottom:1px solid var(--border);
-  text-align: left;
-}
+
 
 .titolo-orari{
   margin-top: 30px; font-size: 1.5rem;

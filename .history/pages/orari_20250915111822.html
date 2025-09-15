@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="it" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)">
+  <title>Basilica — Progetto gemello</title>
+
+  <!-- Foglio di stile principale -->
+  <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
+  <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+<body>
+
+  <!-- ======================================================================
+       TOPBAR: lingua + social (banda superiore sottile)
+       ====================================================================== -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__lang">
+        <a href="#" aria-label="Versione in inglese">ENG</a>
+      </div>
+      <div class="topbar__social" aria-label="Social">
+        <a href="#" aria-label="WhatsApp" title="WhatsApp">WA</a>
+        <a href="#" aria-label="Facebook" title="Facebook">Fb</a>
+        <a href="#" aria-label="X" title="X">X</a>
+        <a href="#" aria-label="YouTube" title="YouTube">YT</a>
+        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       HEADER (masthead): logo + contatti rapidi + hamburger mobile
+       Sticky con nav principale subito sotto
+       ====================================================================== -->
+  <header class="masthead">
+    <div class="container masthead__inner">
+      <!-- BRAND: logo + denominazione (il logo è decorativo; il nome è testuale) -->
+      <a class="brand" href="#home" aria-label="Vai alla Home">
+        <img src="images/logo.svg" alt="" class="brand__logo" aria-hidden="true"/>
+        <span class="brand__name">
+          Basilica Papale e Sacro Convento di<br/>
+          <strong>San Francesco in Assisi</strong>
+        </span>
+      </a>
+
+      <!-- CONTATTI RAPIDI: tre blocchi -->
+      <ul class="masthead__contacts" aria-label="Contatti rapidi">
+        <li>
+          <span class="ic" aria-hidden="true">✉</span>
+          <div>
+            <strong>Uff. Informazioni</strong>
+            <a href="mailto:info@esempio.org">info@esempio.org</a>
+          </div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true">☎</span>
+          <div>
+            <strong>Uff. Informazioni</strong>
+            <a href="tel:+390758190084">(+39) 075 8190084</a>
+          </div>
+        </li>
+        <li>
+          <span class="ic" aria-hidden="true">🏛</span>
+          <div>
+            <strong>Centralino</strong>
+            <a href="tel:+39075819001">(+39) 075 819001</a>
+          </div>
+        </li>
+      </ul>
+
+      <!-- HAMBURGER per mobile -->
+      <button id="menu-button" class="menu-button" aria-controls="primary-nav" aria-expanded="false">
+        <span class="sr-only">Apri/chiudi menu</span>
+        <span aria-hidden="true" class="menu-icon"></span>
+      </button>
+    </div>
+
+    <!-- NAV PRINCIPALE (mega-nav semplificato con sottomenù a tendina) -->
+    <nav id="primary-nav" class="nav" aria-label="Navigazione principale">
+      <ul class="nav__root">
+        <li class="is-active"><a href="#home">Home</a></li>
+
+        <li class="has-sub">
+          <a href="#frate">Frate Francesco</a>
+          <ul class="nav__sub">
+            <li><a href="#">Storia di un santo</a></li>
+            <li><a href="#">Scritti</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="#basilica">Basilica</a>
+          <ul class="nav__sub">
+            <li><a href="#">Chiesa superiore</a></li>
+            <li><a href="#">Chiesa inferiore</a></li>
+            <li><a href="#">Cripta</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="#prenotazioni">Prenotazioni</a>
+          <ul class="nav__sub">
+            <li><a href="#">Visite individuali</a></li>
+            <li><a href="#">Gruppi</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="#attivita">Attività</a>
+          <ul class="nav__sub">
+            <li><a href="#">Pastorale</a></li>
+            <li><a href="#">Cultura</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#notizie">Notizie</a></li>
+
+        <li class="has-sub">
+          <a href="#frati">Frati</a>
+          <ul class="nav__sub">
+            <li><a href="#">Comunità</a></li>
+          </ul>
+        </li>
+
+        <li class="has-sub">
+          <a href="#dona">Dona</a>
+          <ul class="nav__sub">
+            <li><a href="#">Come donare</a></li>
+          </ul>
+        </li>
+
+        <li><a href="#centro">Centro Convegni</a></li>
+        <li><a href="#fondazione">Fondazione Basilica</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ======================================================================
+       HERO: slider immagini + titolo
+       ====================================================================== -->
+  <section id="home" class="hero" aria-label="Sezione introduttiva">
+    <div class="hero__slides">
+      <figure class="hero__slide is-active">
+        <img src="images/hero-1.jpg" alt="Affreschi della Basilica" loading="eager">
+        <figcaption>
+          <h1>Il <span class="accent">Signore</span></h1>
+          <p class="pill">ti dia pace</p>
+        </figcaption>
+      </figure>
+
+      <figure class="hero__slide">
+        <img src="images/hero-2.jpg" alt="Navata con affreschi" loading="lazy">
+      </figure>
+
+      <figure class="hero__slide">
+        <img src="images/hero-3.jpg" alt="Esterno della Basilica al tramonto" loading="lazy">
+      </figure>
+
+      <!-- Controlli slider -->
+      <button class="hero__ctrl prev" aria-label="Slide precedente">‹</button>
+      <button class="hero__ctrl next" aria-label="Slide successiva">›</button>
+    </div>
+
+    <!-- CARDS OVERLAY: 4 box sovrapposti sul bordo inferiore del hero -->
+    <div class="container hero__overlay">
+      <div class="hero__cards" role="list">
+        <article class="card" role="listitem">
+          <h3>Pellegrini</h3>
+          <p>Pellegrinaggi individuali e di gruppo, preghiera, sacramenti.</p>
+          <a class="btn btn--ghost" href="#">Visita</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Visita della Basilica</h3>
+          <p>Informazioni, accessibilità, ingresso gruppi e servizi.</p>
+          <a class="btn btn--ghost" href="#">Visita</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Orari</h3>
+          <p>Apertura, celebrazioni, confessioni.</p>
+          <a class="btn btn--ghost" href="#">Orari</a>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Donazioni</h3>
+          <p>Sostieni la Basilica e le attività dei frati.</p>
+          <a class="btn btn--ghost" href="#dona">Dona</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       BLOCCO: “La Parola …” + colonna Eventi
+       ====================================================================== -->
+  <section id="eventi" class="section section--events">
+    <div class="container grid-2">
+      <div>
+        <p class="eyebrow">dalla Messa quotidiana</p>
+        <h2>La Parola <span class="accent">nella casa di Francesco</span></h2>
+
+        <div class="media" role="figure" aria-label="Contenuto multimediale">
+          <img src="images/hero-2.jpg" alt="Anteprima contenuto" />
+        </div>
+      </div>
+
+      <aside aria-label="Eventi">
+        <h2 class="sr-only">Eventi</h2>
+        <ul class="events">
+          <li>
+            <div class="date" aria-hidden="true">
+              <span>01</span><small>SET</small>
+            </div>
+            <div class="event__content">
+              <a class="event__title" href="#">Concerto in Basilica</a>
+              <p class="muted">Lunedì 1 settembre 2025, ore 21.00 — chiesa superiore.</p>
+            </div>
+          </li>
+          <li>
+            <div class="date" aria-hidden="true">
+              <span>01</span><small>SET</small>
+            </div>
+            <div class="event__content">
+              <a class="event__title" href="#">Nella Giornata della Creazione</a>
+              <p class="muted">Prato di San Francesco, ore 10.00.</p>
+            </div>
+          </li>
+          <li>
+            <div class="date" aria-hidden="true">
+              <span>30</span><small>AGO</small>
+            </div>
+            <div class="event__content">
+              <a class="event__title" href="#">Professioni temporanee</a>
+              <p class="muted">Chiesa inferiore, ore 11.00.</p>
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       BLOCCO: “Ultime Notizie” (3 card)
+       ====================================================================== -->
+  <section id="notizie" class="section">
+    <div class="container">
+      <p class="eyebrow">Cosa succede in Basilica?</p>
+      <h2>Ultime <span class="accent">Notizie</span></h2>
+
+      <div class="cards-3">
+        <article class="post">
+          <img src="images/hero-3.jpg" alt="">
+          <div class="post__body">
+            <div class="badge"><span>28</span> AGO</div>
+            <a href="#" class="post__title">Tempo del Creato nell’ottavo centenario del Cantico</a>
+            <p class="muted">Anche quest’anno un ricco programma di eventi accompagna il Tempo del Creato...</p>
+            <a href="#" class="readmore">Leggi tutto →</a>
+          </div>
+        </article>
+
+        <article class="post">
+          <img src="images/hero-1.jpg" alt="">
+          <div class="post__body">
+            <div class="badge"><span>27</span> AGO</div>
+            <a href="#" class="post__title">Professioni Temporanee</a>
+            <p class="muted">Con grande gioia annunciamo che sabato 30 agosto...</p>
+            <a href="#" class="readmore">Leggi tutto →</a>
+          </div>
+        </article>
+
+        <article class="post">
+          <img src="images/hero-2.jpg" alt="">
+          <div class="post__body">
+            <div class="badge"><span>08</span> AGO</div>
+            <a href="#" class="post__title">Fra Simone: dodici anni di grazia</a>
+            <p class="muted">Tre domande a fra Simone Tenuti...</p>
+            <a href="#" class="readmore">Leggi tutto →</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="center mt-4">
+        <a class="btn btn--primary" href="#">Leggi tutte le notizie</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FASCIA NUMERI (background con overlay scuro, 4 statistiche)
+       ====================================================================== -->
+  <section class="stats" aria-label="Dati sintetici">
+    <div class="container stats__grid">
+      <div>
+        <div class="icon" aria-hidden="true">⌛</div>
+        <div class="n">797</div>
+        <p>Anni di storia</p>
+      </div>
+      <div>
+        <div class="icon" aria-hidden="true">🖼</div>
+        <div class="n">10.000</div>
+        <p>mq. di affreschi</p>
+      </div>
+      <div>
+        <div class="icon" aria-hidden="true">👥</div>
+        <div class="n">53</div>
+        <p>Frati da tutto il mondo</p>
+      </div>
+      <div>
+        <div class="icon" aria-hidden="true">😊</div>
+        <div class="n">10.000</div>
+        <p>Pellegrini al giorno</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       PROGETTI (griglia 3 card)
+       ====================================================================== -->
+  <section id="progetti" class="section">
+    <div class="container">
+      <p class="eyebrow">Vi presentiamo</p>
+      <h2>I nostri <span class="accent">Progetti</span></h2>
+
+      <div class="cards-3">
+        <article class="post">
+          <img src="images/hero-1.jpg" alt="">
+          <div class="post__body"><a class="post__title" href="#">One Health</a></div>
+        </article>
+        <article class="post">
+          <img src="images/hero-2.jpg" alt="">
+          <div class="post__body"><a class="post__title" href="#">Laudato Si’</a></div>
+        </article>
+        <article class="post">
+          <img src="images/hero-3.jpg" alt="">
+          <div class="post__body"><a class="post__title" href="#">Arte & Fede</a></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FOOTER “mega”: 4 colonne + riga legale con anno dinamico
+       ====================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer__grid">
+      <section>
+        <h3 class="footer__title">San Francesco Assisi</h3>
+        <p>CUSTODIA GENERALE DEL SACRO CONVENTO DI SAN FRANCESCO...</p>
+        <p>
+          <a href="mailto:info@esempio.org">info@esempio.org</a><br>
+          <a href="https://www.esempio.org">www.esempio.org</a>
+        </p>
+      </section>
+
+      <section>
+        <h3 class="footer__title">Ultime notizie inserite</h3>
+        <ul class="footer__list">
+          <li><a href="#">Tempo del Creato...</a></li>
+          <li><a href="#">Professioni Temporanee</a></li>
+          <li><a href="#">Fra Simone: dodici anni di grazia</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="footer__title">I luoghi della Basilica</h3>
+        <ul class="footer__list">
+          <li><a href="#">Chiesa Superiore</a></li>
+          <li><a href="#">Chiesa Inferiore</a></li>
+          <li><a href="#">Tomba di San Francesco</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3 class="footer__title">Orari</h3>
+        <ul class="footer__list">
+          <li>Chiesa superiore: 8.30 – 17.45</li>
+          <li>Chiesa inferiore: 6.00 – 18.30</li>
+          <li>Tomba: 6.00 – 18.00</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer__legal">
+      <div class="container">
+        <p>Copyright © <span id="year"></span> Custodia Generale Sacro Convento — <a href="#">Privacy</a> | <a href="#">Cookie policy</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
+  <script src="assets/script.js"></script>
+</body>
+</html>

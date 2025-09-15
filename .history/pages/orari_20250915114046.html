@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="it" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)">
+    <title>Basilica — Progetto gemello</title>
+
+    <!-- Foglio di stile principale -->
+    <link rel="stylesheet" href="../assets/styles.css" />
+
+    <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
+    <script>document.documentElement.classList.remove('no-js');</script>
+</head>
+
+<body>
+
+    <!-- ======================================================================
+       TOPBAR: lingua + social (banda superiore sottile)
+       ====================================================================== -->
+    <div class="topbar">
+        <div class="container topbar__inner">
+            <div class="topbar__lang">
+                <a href="#" aria-label="Versione in inglese">ENG</a>
+            </div>
+            <div class="topbar__social" aria-label="Social">
+                <a href="#" aria-label="WhatsApp" title="WhatsApp">WA</a>
+                <a href="#" aria-label="Facebook" title="Facebook">Fb</a>
+                <a href="#" aria-label="X" title="X">X</a>
+                <a href="#" aria-label="YouTube" title="YouTube">YT</a>
+                <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================================
+       HEADER (masthead): logo + contatti rapidi + hamburger mobile
+       Sticky con nav principale subito sotto
+       ====================================================================== -->
+    <header class="masthead">
+        <div class="container masthead__inner">
+            <!-- BRAND: logo + denominazione (il logo è decorativo; il nome è testuale) -->
+            <a class="brand" href="#home" aria-label="Vai alla Home">
+                <img src="images/logo.svg" alt="" class="brand__logo" aria-hidden="true" />
+                <span class="brand__name">
+                    Basilica Papale e Sacro Convento di<br />
+                    <strong>San Francesco in Assisi</strong>
+                </span>
+            </a>
+
+            <!-- CONTATTI RAPIDI: tre blocchi -->
+            <ul class="masthead__contacts" aria-label="Contatti rapidi">
+                <li>
+                    <span class="ic" aria-hidden="true">✉</span>
+                    <div>
+                        <strong>Uff. Informazioni</strong>
+                        <a href="mailto:info@esempio.org">info@esempio.org</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="ic" aria-hidden="true">☎</span>
+                    <div>
+                        <strong>Uff. Informazioni</strong>
+                        <a href="tel:+390758190084">(+39) 075 8190084</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="ic" aria-hidden="true">🏛</span>
+                    <div>
+                        <strong>Centralino</strong>
+                        <a href="tel:+39075819001">(+39) 075 819001</a>
+                    </div>
+                </li>
+            </ul>
+
+            <!-- HAMBURGER per mobile -->
+            <button id="menu-button" class="menu-button" aria-controls="primary-nav" aria-expanded="false">
+                <span class="sr-only">Apri/chiudi menu</span>
+                <span aria-hidden="true" class="menu-icon"></span>
+            </button>
+        </div>
+
+        <!-- NAV PRINCIPALE (mega-nav semplificato con sottomenù a tendina) -->
+        <nav id="primary-nav" class="nav" aria-label="Navigazione principale">
+            <ul class="nav__root">
+                <li class="is-active"><a href="#home">Home</a></li>
+
+                <li class="has-sub">
+                    <a href="#frate">Frate Francesco</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Storia di un santo</a></li>
+                        <li><a href="#">Scritti</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#basilica">Basilica</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Chiesa superiore</a></li>
+                        <li><a href="#">Chiesa inferiore</a></li>
+                        <li><a href="#">Cripta</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#prenotazioni">Prenotazioni</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Visite individuali</a></li>
+                        <li><a href="#">Gruppi</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#attivita">Attività</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Pastorale</a></li>
+                        <li><a href="#">Cultura</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#notizie">Notizie</a></li>
+
+                <li class="has-sub">
+                    <a href="#frati">Frati</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Comunità</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#dona">Dona</a>
+                    <ul class="nav__sub">
+                        <li><a href="#">Come donare</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#centro">Centro Convegni</a></li>
+                <li><a href="#fondazione">Fondazione Basilica</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ======================================================================
+       HERO: slider immagini + titolo
+       ====================================================================== -->
+    <div class="main-content">
+
+        <section id="home" class="hero" aria-label="Sezione introduttiva">
+            <div class="hero__slides">
+                <figure class="hero__slide is-active">
+                    <img src="../images/hero-1.jpg" alt="Affreschi della Basilica" loading="eager">
+                    <figcaption>
+                        <h1>Orari <span class="accent"> 
+                            Basilica</span></h1>
+                        <p class="pill">Tutti gli orari della Basilica</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+       
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+
+                        <p></p>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <h3 align="center">ORARIO DI APERTURA E DI VISITA - estivo ORA LEGALE</h3>
+                        <p></p>
+                        <p>
+                        </p>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th scope="col">Chiesa Inferiore:</th>
+                                    <td>dalle 6:00 alle 19:00 (mercoledì chiusura alle 18:00, sabato chiusura alle
+                                        19:00)</td>
+                                    <td>Si può accedere dopo le 19:00, eccetto il mercoledì, solo per partecipare alla
+                                        preghiera comunitaria.</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>Per le visite guidate di gruppo (solo feriali):</td>
+                                    <td>dalle 9 alle 17:15 (ultimo ingresso - solo sabato, ore 17:00)</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <!-- tr><td>&nbsp</td><td>Per la visita individuale (feriali):</td><td>dalle 8:30 alle 18:30</td></tr>
+    <tr><td>&nbsp</td><td>Per la visita individuale (festivi):</td><td>dalle 10:30 alle 16:30</td></tr>
+    <tr><td>&nbsp</td><td></td><td></td></tr -->
+
+                                <tr>
+                                    <th>Chiesa Superiore:</th>
+                                    <td>dalle 8:30 alle 18:45</td>
+                                    <td></td>
+                                </tr>
+                                <!-- tr><td>&nbsp</td><td>Per la visita (feriale):</td><td>dalle 8:30 alle 18:45</td></tr>
+    <tr><td>&nbsp</td><td>Per la visita (festivo):</td><td>dalle 13:00 alle 18:45</td></tr>
+    <tr><td>&nbsp</td><td></td><td></td></tr -->
+
+                                <tr>
+                                    <th>Tomba di San Francesco:</th>
+                                    <td>dalle 6:00 alle 18:30</td>
+                                    <td></td>
+                                </tr>
+                                <!-- tr><td>&nbsp</td><td>Venerdì e Sabato</td><td>dalle 21:00 alle 22:00 solo per la preghiera personale</td></tr>
+    <tr><td>&nbsp</td><td></td><td></td></tr -->
+                            </tbody>
+                        </table>
+                        <p></p>
+                        <br>
+                        <p></p>
+                        <h3 align="center">ORARIO CELEBRAZIONI E CONFESSIONI</h3>
+                        <p></p>
+                        <p>
+                        </p>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th colspan="4">
+                                        <center>
+                                            <h4>Giorni feriali</h4>
+                                        </center>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Chiesa Inferiore:</th>
+                                    <td>Ufficio di letture e Lodi:</td>
+                                    <td>6:30</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>S. Messe:</td>
+                                    <td>7:15, 11:00, 18:00</td>
+                                    <td></td>
+                                </tr>
+                                <!-- tr><th>&nbsp</th><td>S. Messa del pellegrino:</td><td>18:00</td><td></td></tr -->
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>Vespri:</td>
+                                    <td>19:00 (eccetto il mercoledì)</td>
+                                    <td></td>
+                                </tr>
+                                <!-- tr><th>&nbsp</th><td>Sono possibili Ss. Messe per gruppi prenotati, aperte alla partecipazione di tutti,<br> - in Cripta alle 8.00 e alle 9.00<br> - in S. Caterina, in italiano, alle 9, alle 12 e alle 16.</td><td></td><td></td></tr -->
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>Confessioni:</td>
+                                    <td>dalle 7:30 alle 12:30 - dalle 15:00 alle 18:45</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+
+                                <!-- tr><th>Tomba:</th><td>Ora media e benedizione:</td><td>12:30 (escluso il sabato)</td></tr>
+    <tr><td>&nbsp</td><td></td><td></td><td></td></tr -->
+
+                                <tr>
+                                    <th colspan="4">
+                                        <center>
+                                            <h4>Giorni festivi</h4>
+                                        </center>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Chiesa Inferiore:</th>
+                                    <td>S. Messe:</td>
+                                    <td>7:30, 9:00, 17:00, 18:30</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>Vespri solenni:</td>
+                                    <td>18:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <td>Confessioni:</td>
+                                    <td>dalle 7:30 alle 13:00 - dalle 14:30 alle 19:15</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Chiesa Superiore:</th>
+                                    <td>S. Messe:</td>
+                                    <td>10:30, 12:00</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <th>Cappella di Frate Leone</th>
+                                    <td>S. Messa in inglese:</td>
+                                    <td>9:00 (tutte le domeniche)</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ======================================================================
+       FOOTER “mega”: 4 colonne + riga legale con anno dinamico
+       ====================================================================== -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer__grid">
+            <section>
+                <h3 class="footer__title">San Francesco Assisi</h3>
+                <p>CUSTODIA GENERALE DEL SACRO CONVENTO DI SAN FRANCESCO...</p>
+                <p>
+                    <a href="mailto:info@esempio.org">info@esempio.org</a><br>
+                    <a href="https://www.esempio.org">www.esempio.org</a>
+                </p>
+            </section>
+
+            <section>
+                <h3 class="footer__title">Ultime notizie inserite</h3>
+                <ul class="footer__list">
+                    <li><a href="#">Tempo del Creato...</a></li>
+                    <li><a href="#">Professioni Temporanee</a></li>
+                    <li><a href="#">Fra Simone: dodici anni di grazia</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="footer__title">I luoghi della Basilica</h3>
+                <ul class="footer__list">
+                    <li><a href="#">Chiesa Superiore</a></li>
+                    <li><a href="#">Chiesa Inferiore</a></li>
+                    <li><a href="#">Tomba di San Francesco</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="footer__title">Orari</h3>
+                <ul class="footer__list">
+                    <li>Chiesa superiore: 8.30 – 17.45</li>
+                    <li>Chiesa inferiore: 6.00 – 18.30</li>
+                    <li>Tomba: 6.00 – 18.00</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="footer__legal">
+            <div class="container">
+                <p>Copyright © <span id="year"></span> Custodia Generale Sacro Convento — <a href="#">Privacy</a> | <a
+                        href="#">Cookie policy</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
+    <script src="../assets/script.js"></script>
+</body>
+
+</html>

@@ -216,9 +216,10 @@ a:hover{text-decoration:underline}
   width:100%;
   border-collapse:collapse;
 }
-.orari th,.orari td{
-  padding:.5rem;
-  border-bottom:1px solid var(--border);
+
+.tabella-orari th, .tabella-orari td {
+  border: 1px solid var(--border);
+  padding: 8px;
   text-align: left;
 }
 

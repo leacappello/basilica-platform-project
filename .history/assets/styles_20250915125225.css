@@ -215,7 +215,8 @@ a:hover{text-decoration:underline}
 .tabella-orari{
   width:100%;
   border-collapse:collapse;
-}
+  border:1px solid var(--border);
+  margin-top: 30px;}
 .orari th,.orari td{
   padding:.5rem;
   border-bottom:1px solid var(--border);

@@ -212,14 +212,15 @@ a:hover{text-decoration:underline}
 .no-js .nav{display:block}
 
 /* ============== Tabella Orari ============== */
-.tabella-orari{
+.orari table{
   width:100%;
   border-collapse:collapse;
+  padding:.5rem;
+  margin-bottom: 20px;
 }
 .orari th,.orari td{
   padding:.5rem;
-  border-bottom:1px solid var(--border);
-  text-align: left;
+  border-bottom:1px solid var(--border)
 }
 
 .titolo-orari{
