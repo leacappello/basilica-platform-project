@@ -11,26 +11,43 @@
 
   <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
   <script>document.documentElement.classList.remove('no-js');</script>
+
+  <!-- Link FontAwsome per le icone della sezione Header -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
 </head>
 <body>
 
   <!-- ======================================================================
        TOPBAR: lingua + social (banda superiore sottile)
        ====================================================================== -->
-  <div class="topbar">
-    <div class="container topbar__inner">
-      <div class="topbar__lang">
-        <a href="#" aria-label="Versione in inglese">ENG</a>
-      </div>
-      <div class="topbar__social" aria-label="Social">
-        <a href="#" aria-label="WhatsApp" title="WhatsApp">WA</a>
-        <a href="#" aria-label="Facebook" title="Facebook">Fb</a>
-        <a href="#" aria-label="X" title="X">X</a>
-        <a href="#" aria-label="YouTube" title="YouTube">YT</a>
-        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <div id="google_translate_element" style="display: none"></div>
+        <a href="#" onclick="translatePageToEnglish()" style="font-size: 25px;">🇬🇧</a>
+
+        <div class="topbar__social" aria-label="Social">
+          <a href="#" aria-label="WhatsApp" title="WhatsApp"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
+          <a href="#" aria-label="Facebook" title="Facebook"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" aria-label="X" title="X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="#" aria-label="YouTube" title="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="#" aria-label="Instagram" title="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
       </div>
     </div>
-  </div>
+
 
   <!-- ======================================================================
        HEADER (masthead): logo + contatti rapidi + hamburger mobile
@@ -40,11 +57,7 @@
     <div class="container masthead__inner">
       <!-- BRAND: logo + denominazione (il logo è decorativo; il nome è testuale) -->
       <a class="brand" href="#home" aria-label="Vai alla Home">
-        <img src="images/logo.svg" alt="" class="brand__logo" aria-hidden="true"/>
-        <span class="brand__name">
-          Basilica Papale e Sacro Convento di<br/>
-          <strong>San Francesco in Assisi</strong>
-        </span>
+        <img src="images/logop1.png" alt="" class="brand__logo" aria-hidden="true"/>
       </a>
 
       <!-- CONTATTI RAPIDI: tre blocchi -->
@@ -395,5 +408,9 @@
 
   <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
   <script src="assets/script.js"></script>
+
+ <!--   Link che permette la traduzione del sito in inglese sfruttando Google traduttore -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
