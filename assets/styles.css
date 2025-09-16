@@ -221,14 +221,14 @@ a:hover{text-decoration:underline}
 
 .history-label {
   position: absolute;           
-  top: 50%;                     
+  top: 60%;                     
   transform: translateY(-50%);  
   left: 10px; 
-  background-color: #000;       /* sfondo nero */
+  background-color: transparent;       /* sfondo nero */
   color: #fff;
   font-family: 'Franciscus-Regular';
   font-weight: bold;
-  font-size: 36px;
+  font-size: 38px;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin: 15px 0 10px;
