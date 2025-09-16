@@ -91,11 +91,15 @@ a:hover{text-decoration:underline}
 .nav__sub a:hover{background:#f7f7f9}
 
 /* ============== Hero (slider + overlay cards) ============== */
-.hero{position:relative;background:#000;color:#fff}
-.hero__slides{position:relative;overflow:hidden}
-.hero__slide{display:none;margin:0}
-.hero__slide.is-active{display:block}
-.hero__slide img{width:100%;height:62vh;min-height:420px;object-fit:cover;opacity:.9}
+.hero{position:relative;background:#fff;color:#fff}
+.hero__slides{position:relative;overflow:hidden;height:62vh;min-height:420px}
+.hero__slide{
+  position:absolute;top:0;left:0;width:100%;height:100%;margin:0;
+  opacity:0;transform:translateX(100%);
+  transition:all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hero__slide.is-active{opacity:1;transform:translateX(0)}
+.hero__slide img{width:100%;height:100%;object-fit:cover;opacity:.9}
 .hero__slide figcaption{position:absolute;left:8%;bottom:16%;max-width:700px}
 .hero__slide h1{font-size:clamp(2.5rem,6vw,5rem);font-weight:600}
 .pill{

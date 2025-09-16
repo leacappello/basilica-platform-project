@@ -46,8 +46,11 @@ const sectionsMap = new Map();
 
 navLinks.forEach((link) => {
   const id = link.getAttribute("href");
-  const section = id ? document.querySelector(id) : null;
-  if (section) sectionsMap.set(section, link);
+  // Salta i link che hanno solo "#" o non sono validi
+  if (id && id !== "#" && id.startsWith("#") && id.length > 1) {
+    const section = document.querySelector(id);
+    if (section) sectionsMap.set(section, link);
+  }
 });
 
 function setActiveLink(sectionEl) {
@@ -86,28 +89,114 @@ document.addEventListener("DOMContentLoaded", () => {
   if (current && sectionsMap.has(current)) setActiveLink(current);
 });
 
-/* 4) Mini carousel Hero -----------------------------------------------------*/
-(function () {
+/* 4) CAROUSEL HERO --------------------------------------------------------
+   Sistema di scorrimento immagini con transizioni fluide
+   - Autoplay ogni 7 secondi con pausa su hover
+   - Controlli manuali (frecce prev/next)
+   - Transizioni con fade e movimento orizzontale
+   --------------------------------------------------------------------------*/
+document.addEventListener('DOMContentLoaded', function() {
+  // Elementi DOM del carousel
   const slides = Array.from(document.querySelectorAll(".hero__slide"));
-  if (!slides.length) return;
-
-  let i = 0;
-  const show = (idx) => {
-    slides.forEach((s) => s.classList.remove("is-active"));
-    slides[idx].classList.add("is-active");
-  };
-  const next = () => { i = (i + 1) % slides.length; show(i); };
-  const prev = () => { i = (i - 1 + slides.length) % slides.length; show(i); };
-
   const btnNext = document.querySelector(".hero__ctrl.next");
   const btnPrev = document.querySelector(".hero__ctrl.prev");
-  btnNext && btnNext.addEventListener("click", next);
-  btnPrev && btnPrev.addEventListener("click", prev);
+  const slidesContainer = document.querySelector(".hero__slides");
+  
+  // Esci se non ci sono slide
+  if (!slides.length) return;
+  
+  // Variabili di stato del carousel
+  let currentIndex = 0;        // Slide attualmente visibile
+  let isTransitioning = false; // Previene transizioni multiple simultanee
+  let timer;                   // Timer autoplay
 
-  let timer = setInterval(next, 7000);
-  const slidesWrap = document.querySelector(".hero__slides");
-  if (slidesWrap) {
-    slidesWrap.addEventListener("mouseenter", () => clearInterval(timer));
-    slidesWrap.addEventListener("mouseleave", () => (timer = setInterval(next, 7000)));
+  /**
+   * Gestisce la transizione tra slide con effetto fade e movimento
+   * @param {number} targetIndex - Indice della slide di destinazione
+   * @param {string} direction - Direzione: 'next' (da destra) o 'prev' (da sinistra)
+   */
+  function showSlide(targetIndex, direction = 'next') {
+    // Blocca se già in transizione o stessa slide
+    if (isTransitioning || targetIndex === currentIndex) return;
+    
+    isTransitioning = true;
+    const currentSlide = slides[currentIndex];
+    const targetSlide = slides[targetIndex];
+
+    // Rimuovi classe attiva da tutte le slide
+    slides.forEach(slide => slide.classList.remove('is-active'));
+    
+    // Posiziona la nuova slide fuori schermo
+    targetSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+    targetSlide.style.opacity = '0';
+    targetSlide.classList.add('is-active');
+
+    // Anima l'entrata della nuova slide e l'uscita di quella corrente
+    requestAnimationFrame(() => {
+      // Nuova slide: entra al centro con fade-in
+      targetSlide.style.transform = 'translateX(0)';
+      targetSlide.style.opacity = '1';
+      
+      // Slide corrente: esce dal lato opposto con fade-out
+      currentSlide.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+      currentSlide.style.opacity = '0';
+    });
+
+    // Cleanup dopo la transizione (800ms = durata CSS)
+    setTimeout(() => {
+      // Reset stili inline per tornare al CSS base
+      slides.forEach(slide => {
+        slide.style.transform = '';
+        slide.style.opacity = '';
+      });
+      
+      // Aggiorna stato
+      currentIndex = targetIndex;
+      isTransitioning = false;
+    }, 800);
   }
-})();
+
+  /**
+   * Passa alla slide successiva (movimento circolare)
+   */
+  function next() {
+    showSlide((currentIndex + 1) % slides.length, 'next');
+  }
+
+  /**
+   * Passa alla slide precedente (movimento circolare)
+   */
+  function prev() {
+    showSlide((currentIndex - 1 + slides.length) % slides.length, 'prev');
+  }
+
+  // Event listeners per controlli manuali
+  if (btnNext) btnNext.addEventListener("click", (e) => { e.preventDefault(); next(); });
+  if (btnPrev) btnPrev.addEventListener("click", (e) => { e.preventDefault(); prev(); });
+
+  // Inizializza autoplay
+  timer = setInterval(next, 7000);
+
+  // Autoplay con pausa su hover del mouse
+  if (slidesContainer) {
+    slidesContainer.addEventListener("mouseenter", () => clearInterval(timer));
+    slidesContainer.addEventListener("mouseleave", () => timer = setInterval(next, 7000));
+  }
+
+  // Supporto touch/swipe per dispositivi mobili
+  let startX = 0;
+  if (slidesContainer) {
+    // Registra posizione iniziale del touch
+    slidesContainer.addEventListener("touchstart", (e) => startX = e.touches[0].clientX, { passive: true });
+    
+    // Gestisce fine touch e determina direzione swipe
+    slidesContainer.addEventListener("touchend", (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      // Soglia minima 50px per swipe valido
+      if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+    }, { passive: true });
+  }
+
+  // Debug: log per verificare che tutto sia caricato
+  console.log('Carousel initialized:', slides.length, 'slides found');
+});
