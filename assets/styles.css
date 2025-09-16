@@ -211,8 +211,6 @@ a:hover{text-decoration:underline}
 /* ============== No-JS fallback ============== */
 .no-js .nav{display:block}
 
-/* da qui ho iniziato le modifiche per il css dimmi come posso gestire i commit */
-
 #history-image {
   background-image: url('../../images/topshownews.jpg'); 
   background-size: cover; 
@@ -222,20 +220,21 @@ a:hover{text-decoration:underline}
 
 #container {
   display: flex;
-  gap: 20px; /* spazio tra card e sidebar */
-  margin: 30px 110px;
-  padding: 30px 15px;
-  flex-wrap: wrap; /* così su schermi piccoli vanno uno sotto l'altro */
+  gap: 20px;
+  margin: 30px auto;       
+  padding: 20px;           
+  flex-wrap: wrap;
+  max-width: 1300px;        
 }
 
 .card-container {
-  flex: 1 1 65%; /* prende il 65% dello spazio, ma si adatta */
-  min-width: 300px;
-  padding: 0 15px;
+  flex: 1 1 60%;   
+  min-width: 280px; 
+  padding: 0 10px;
 }
 
 .card-image img {
-  width: 100%; /* si adatta automaticamente alla larghezza del contenitore */
+  width: 100%; 
   height: auto;
   display: block;
 }
@@ -243,7 +242,7 @@ a:hover{text-decoration:underline}
 .card-content {
   background-color: #f8f8f8f8;
   padding: 20px 10px 20px 20px;
-  width: 100%; /* si adatta alla card */
+  width: 100%; 
   margin-bottom: 60px;
 }
 
@@ -266,9 +265,9 @@ a:hover{text-decoration:underline}
 }
 
 .card-title-text {
-  width: 638px;
+  width: auto;
   height: 52px;
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 .card-title-text h4, p {
@@ -276,29 +275,29 @@ a:hover{text-decoration:underline}
 }
 
 .sidebar-container {
-  flex: 1 1 30%; /* prende il 30% dello spazio */
-  min-width: 250px;
-  padding: 15px;
+  flex: 1 1 35%;
+  min-width: 220px;
+  padding: 10px;
 }
 
 .read-more {
   text-decoration: none;
-  display: inline-flex;       /* testo e cerchio sulla stessa riga */
+  display: inline-flex;
   align-items: center;
-  gap: 10px;                  /* spazio tra testo e cerchio */
+  gap: 10px;                  
 }
 
 .read-more:hover {
-  text-decoration: none; /* disattiva sottolineatura anche in hover */
+  text-decoration: none; 
 }
 
 .circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;               /* diametro del cerchio */
+  width: 20px;               
   height: 20px;
-  border-radius: 50%;        /* rende il div un cerchio */
+  border-radius: 50%;        
   border: 1px solid ;
 }
 
@@ -314,7 +313,7 @@ a:hover{text-decoration:underline}
 }
 
 .list-pagination li + li {
-  border-left: none; /* evita il doppio bordo tra i box */
+  border-left: none; 
 }
 
 .list-pagination li a:hover {
