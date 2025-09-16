@@ -119,11 +119,15 @@ a:hover{text-decoration:underline}
 /* Overlay 4 card */
 .hero__overlay{position:relative}
 .hero__cards{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:-70px
+  display:grid;grid-template-columns:repeat(4,1fr);margin-top:-70px
 }
 .card{
   background:#526e76;color:#ecf1f3;padding:1.1rem;border-radius:14px;box-shadow:var(--shadow)
 }
+.card:nth-child(1){background:#546e7a} /* Pellegrini */
+.card:nth-child(2){background:#4e6671} /* Visita basilica */
+.card:nth-child(3){background:#4a606b} /* Orari */
+.card:nth-child(4){background:#455b65} /* Donazioni */
 .card h3{margin:.1rem 0 .35rem}
 .card .btn{margin-top:.5rem}
 
