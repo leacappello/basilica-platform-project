@@ -7,6 +7,26 @@
    - Mini carousel hero (autoplay + prev/next + pausa on-hover)
    ========================================================================== */
 
+
+/* 0) Traduzione in inglese della pagina  */
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'it',
+    includedLanguages: 'en',
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+
+function translatePageToEnglish() {
+  const select = document.querySelector('#google_translate_element select');
+  if (select) {
+    select.selectedIndex = 1;
+    select.dispatchEvent(new Event('change'));
+  }
+}
+
+
 /* 1) Anno corrente nel footer ------------------------------------------------*/
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = String(new Date().getFullYear());
@@ -40,50 +60,53 @@ if (menuBtn && primaryNav) {
 }
 
 /* 3) Evidenziazione link attivo durante lo scroll ---------------------------*/
-const nav = document.getElementById("primary-nav");
-const navLinks = nav ? nav.querySelectorAll('a[href^="#"]') : [];
-const sectionsMap = new Map();
-
-navLinks.forEach((link) => {
-  const id = link.getAttribute("href");
-  const section = id ? document.querySelector(id) : null;
-  if (section) sectionsMap.set(section, link);
-});
-
-function setActiveLink(sectionEl) {
-  navLinks.forEach((a) => a.removeAttribute("aria-current"));
-  const link = sectionsMap.get(sectionEl);
-  if (link) link.setAttribute("aria-current", "page");
-}
-
-if ("IntersectionObserver" in window && sectionsMap.size) {
-  const io = new IntersectionObserver(
-    (entries) => {
-      let best = null;
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
-        }
-      }
-      if (best) setActiveLink(best.target);
-    },
-    {
-      root: null,
-      rootMargin: "-35% 0px -35% 0px",
-      threshold: [0, 0.25, 0.5, 0.75, 1],
-    }
-  );
-  sectionsMap.forEach((_l, section) => io.observe(section));
-}
-
-window.addEventListener("hashchange", () => {
-  const current = document.querySelector(location.hash);
-  if (current && sectionsMap.has(current)) setActiveLink(current);
-});
-
 document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.getElementById("primary-nav");
+  const navLinks = nav ? nav.querySelectorAll('a[href^="#"]') : [];
+  const sectionsMap = new Map();
+
+  navLinks.forEach((link) => {
+    const id = link.getAttribute("href");
+    if (!id || id === "#") return;
+    const section = document.querySelector(id);
+    if (section) sectionsMap.set(section, link);
+  });
+
+  function setActiveLink(sectionEl) {
+    navLinks.forEach((a) => a.removeAttribute("aria-current"));
+    const link = sectionsMap.get(sectionEl);
+    if (link) link.setAttribute("aria-current", "page");
+  }
+
+  if ("IntersectionObserver" in window && sectionsMap.size) {
+    const io = new IntersectionObserver(
+      (entries) => {
+        let best = null;
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            if (!best || e.intersectionRatio > best.intersectionRatio) best = e;
+          }
+        }
+        if (best) setActiveLink(best.target);
+      },
+      {
+        root: null,
+        rootMargin: "0px", // meno restrittivo
+        threshold: [0.5],  // attiva quando metà sezione è visibile
+      }
+    );
+    sectionsMap.forEach((_link, section) => io.observe(section));
+  }
+
+  // Attiva link al caricamento se c'è hash
   const current = document.querySelector(location.hash);
   if (current && sectionsMap.has(current)) setActiveLink(current);
+
+  // Attiva link al cambio hash manuale
+  window.addEventListener("hashchange", () => {
+    const current = document.querySelector(location.hash);
+    if (current && sectionsMap.has(current)) setActiveLink(current);
+  });
 });
 
 /* 4) Mini carousel Hero -----------------------------------------------------*/
@@ -111,3 +134,4 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesWrap.addEventListener("mouseleave", () => (timer = setInterval(next, 7000)));
   }
 })();
+
