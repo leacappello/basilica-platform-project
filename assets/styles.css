@@ -210,3 +210,250 @@ a:hover{text-decoration:underline}
 
 /* ============== No-JS fallback ============== */
 .no-js .nav{display:block}
+
+/* da qui ho iniziato le modifiche per il css dimmi come posso gestire i commit */
+
+#history-image {
+  background-image: url('../../images/topshownews.jpg'); 
+  background-size: cover; 
+  background-position: center; 
+  height: 200px;
+}
+
+#container {
+  display: flex;
+  gap: 20px; /* spazio tra card e sidebar */
+  margin: 30px 110px;
+  padding: 30px 15px;
+  flex-wrap: wrap; /* così su schermi piccoli vanno uno sotto l'altro */
+}
+
+.card-container {
+  flex: 1 1 65%; /* prende il 65% dello spazio, ma si adatta */
+  min-width: 300px;
+  padding: 0 15px;
+}
+
+.card-image img {
+  width: 100%; /* si adatta automaticamente alla larghezza del contenitore */
+  height: auto;
+  display: block;
+}
+
+.card-content {
+  background-color: #f8f8f8f8;
+  padding: 20px 10px 20px 20px;
+  width: 100%; /* si adatta alla card */
+  margin-bottom: 60px;
+}
+
+.card-container p {
+  margin: 10px 0 10px 0;
+}
+
+.card-content-title {
+  display: flex;
+}
+
+.rectangle {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: #546E7A;
+  height: 52px;
+  width: 30px;
+}
+
+.card-title-text {
+  width: 638px;
+  height: 52px;
+  padding-left: 15px;
+}
+
+.card-title-text h4, p {
+  margin: 0;
+}
+
+.sidebar-container {
+  flex: 1 1 30%; /* prende il 30% dello spazio */
+  min-width: 250px;
+  padding: 15px;
+}
+
+.read-more {
+  text-decoration: none;
+  display: inline-flex;       /* testo e cerchio sulla stessa riga */
+  align-items: center;
+  gap: 10px;                  /* spazio tra testo e cerchio */
+}
+
+.read-more:hover {
+  text-decoration: none; /* disattiva sottolineatura anche in hover */
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;               /* diametro del cerchio */
+  height: 20px;
+  border-radius: 50%;        /* rende il div un cerchio */
+  border: 1px solid ;
+}
+
+.list-pagination {
+  display: flex;
+}
+
+.list-pagination li {
+  display: inline-block;
+  border: 1px solid #546E7A;
+  padding: 5px 13px 5px 13px;
+  color: #546E7A;
+}
+
+.list-pagination li + li {
+  border-left: none; /* evita il doppio bordo tra i box */
+}
+
+.list-pagination li a:hover {
+  text-decoration: none;
+}
+
+.list-pagination .active {
+  background-color: #546E7A;
+  color: white;
+  padding: 5px 13px 5px 13px;
+  cursor: default;
+}
+
+.list-pagination .active a:hover {
+  cursor: default;
+}
+
+.widget h5 {
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.widget, .widget-interest h5, .widget-twitter, .widget-gallery h5 {
+  position: relative;
+  display: inline-block; 
+  padding-bottom: 4px; 
+  width: 100%;
+}
+
+.widget-twitter {
+  margin-top: 30px;
+}
+
+.widget-gallery {
+  margin-top: 40px;
+}
+
+.widget ul {
+  list-style: none;
+  padding: 0;
+}
+
+.widget ul li a {
+  font-weight: 20;
+  margin-bottom: 0;
+}
+
+.widget ul li a:hover {
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.widget-interest h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10%; 
+  border-bottom: 2px solid #546E7A; 
+}
+
+.widget-interest h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%; 
+  border-bottom: 1px dotted #546E7A; 
+}
+
+.widget-twitter h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10%; 
+  border-bottom: 2px solid #546E7A; 
+}
+
+.widget-twitter h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%; 
+  border-bottom: 1px dotted #546E7A; 
+}
+
+.widget-underline-dotted {
+  border-bottom: 1px dotted #546E7A;
+  width: 80%; 
+}
+
+.widget-gallery h5::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 10%; 
+  border-bottom: 2px solid #546E7A; 
+}
+
+.widget-gallery h5::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80%; 
+  border-bottom: 1px dotted #546E7A; 
+}
+
+.widget-gallery .gallery-image-link .image a img {
+  width: 80%;
+}
+
+.widget-gallery .gallery-image-link .link a {
+  text-decoration: none;
+}
+
+.widget-gallery .gallery-image-link .link a h4 {
+  color: #333333;
+  font-size: 17px;
+  font-weight: normal;
+  margin: 0;
+  width: 80%;
+}
+
+.gallery-image-link {
+  margin-top: 10px;
+}
+
+.widget-gallery .gallery-image-link .description h3 {
+  color: #333333;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+
+
