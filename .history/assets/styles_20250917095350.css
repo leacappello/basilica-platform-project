@@ -258,22 +258,21 @@ input, textarea{
   resize: none;
 }
 
-.btn{
+input[type="submit"]{
   background-color: var(--accent);
   color: #fff;
   cursor: pointer;
-  width: 100px;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  
 }
 
-
-select{
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+input[type="submit"]:hover{
+  background-color: var(--accent-hover);
 }
+
+input[type="submit"]:active{
+  background-color: var(--accent-active);
+}
+
+select
 
 label{
   display: block;
