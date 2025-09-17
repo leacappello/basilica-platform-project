@@ -178,14 +178,30 @@ a:hover{text-decoration:underline}
 .stats__grid .n{font-size:2.25rem;font-weight:800}
 
 /* ============== Footer “mega” ============== */
-.site-footer{background:#111;color:#d6d6d6}
+.site-footer{background:#222222;color:#d6d6d6}
 .footer__grid{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.2fr;gap:2rem;padding-block:2.5rem}
 .footer__title{color:#fff;margin-bottom:.5rem}
+.line__bottom {position: relative; margin: 0 0 20px;padding: 0 0 10px;color: #fff; border-bottom: 1px solid #444}
+.line__bottom::after {content: "";position: absolute;bottom: 0;left: 0;height: 2px;width: 20%;background-color: #546E7A;}
 .footer__list{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+.luoghi-list,.orari-list{margin:13px 0 0!important}
+.border-dashed{margin: 5px 0 8px; padding:0 0 8px; border-bottom:1px dashed #404040}
 .footer__legal{border-top:1px solid #333;background:#0d0d0d;font-size:.9rem}
 .footer__legal .container{padding-block:.9rem}
+
 .center{text-align:center}
 .mt-4{margin-top:var(--space-4)}
+
+/*==============Sezione Orario chiesa Inferiore==============*/
+.orario-container{display:flex; flex-direction:column}
+
+
+/*==============Sezione Footer Section Ultime notizie con immagini==========*/
+.footer__list.news-list {list-style: none;padding: 0;margin: 0;}
+.footer__list.news-list li {display: flex; align-items: center;gap: 10px;margin-bottom: 1rem;}
+.footer__list.news-list .news-image {width: 90px;height: 60px;object-fit: cover;}
+.footer__list.news-list a {font-size: 13px; letter-spacing: 0;}
+
 
 /* ============== Responsive ============== */
 @media (max-width: 1024px){
@@ -203,9 +219,17 @@ a:hover{text-decoration:underline}
   .hero__cards{grid-template-columns:1fr;margin-top:-30px}
   .cards-3{grid-template-columns:1fr}
   .stats__grid{grid-template-columns:1fr 1fr}
+  .footer__grid{grid-template-columns:1fr; flex: 1}/*Metti tutto su una sola colonna*/
+  .footer__list.news-list li {gap: 15px;}
+  .footer__list.news-list .news-image {width: 50px;height: 50px;}
+  .footer__list.news-list a {font-size: 0.9rem;}
+
 }
 @media (max-width: 480px){
   .stats__grid{grid-template-columns:1fr}
+  .footer__list.news-list li { gap: 20px; }
+  .footer__list.news-list .news-image {width: 40px; height: 40px;}
+  .footer__list.news-list a {font-size: 0.85rem;}
 }
 
 /* ============== No-JS fallback ============== */
