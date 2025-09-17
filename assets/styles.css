@@ -214,24 +214,26 @@ a:hover{text-decoration:underline}
 #history-image {
   position: relative;
   background-image: url('../../images/topshownews.jpg'); 
-  background-size: cover; 
-  background-position: center; 
+  background-size: cover;
+  background-position: center;
   height: 200px;
+
+  display: flex;
+  align-items: center;
 }
 
 .history-label {
-  position: absolute;           
-  top: 60%;                     
-  transform: translateY(-50%);  
-  left: 10px; 
-  background-color: transparent;       /* sfondo nero */
   color: #fff;
   font-family: 'Franciscus-Regular';
   font-weight: bold;
-  font-size: 38px;
+  font-size: 38px; /* clamp(1.5rem, 3vw, 38px) */
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 15px 0 10px;
+
+  width: 100%;
+  max-width: 1300px;   /* stesso max-width del container delle card */
+  margin: 0 auto;      /* centriamo il blocco orizzontalmente */
+  padding-inline: 20px; /* optional: piccolo padding interno per respirare */
 }
 
 #container {
@@ -473,25 +475,11 @@ a:hover{text-decoration:underline}
 
 /* ============== MEDIA QUERIES RESPONSIVE ============== */
 
-@media (min-width: 992px) {
-  .history-label {
-    left: calc((100% - 1300px)/2 + 10px + 0px);
-  }
-}
-
 /* Tablet e schermi medi (max-width: 991px) */
 @media (max-width: 991px) {
   main.main-content section {
     width: 100%;
     margin: 0 auto;
-  }
-
-  #history-image {
-    width: 100%;
-  }
-
-  .history-label {
-    left: var(--space-4);
   }
 
   #container {
@@ -540,14 +528,15 @@ a:hover{text-decoration:underline}
 
 /* Tablet piccoli (max-width: 767px) */
 @media (max-width: 767px) {
-#container {
-    flex-direction: column; 
-}
 
-.card-container,
-.sidebar-container {
-    flex: 1 1 100%;
-}
+  #container {
+      flex-direction: column; 
+  }
+
+  .card-container,
+  .sidebar-container {
+      flex: 1 1 100%;
+  }
 
   .card-content {
     padding: 15px 10px 15px 15px;
@@ -576,24 +565,11 @@ a:hover{text-decoration:underline}
 
 /* Smartphone (max-width: 480px) */
 @media (max-width: 480px) {
-  #history-image {
-    height: 150px;
-  }
-
-  .history-label {
-    font-size: 0.85rem;
-    padding: 4px 10px;
-  }
 
   #container {
     margin: 15px auto;
     padding: 10px;
     gap: 10px;
-  }
-
-  .history-label {
-    font-size: 0.85rem;
-    padding: 4px 10px;
   }
 
   .card-container, .sidebar-container {
@@ -657,6 +633,7 @@ a:hover{text-decoration:underline}
 
 /* Extra small devices (max-width: 360px) */
 @media (max-width: 360px) {
+
   #container {
     margin: 10px auto;
     padding: 8px;
