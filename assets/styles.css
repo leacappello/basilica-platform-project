@@ -149,13 +149,15 @@ a:hover{text-decoration:underline}
 }
 .card{
   background:#526e76;color:#ecf1f3;padding:1.1rem;
+  display:flex;flex-direction:column;
 }
 .card:nth-child(1){background:#546e7a} /* Pellegrini */
 .card:nth-child(2){background:#4e6671} /* Visita basilica */
 .card:nth-child(3){background:#4a606b} /* Orari */
 .card:nth-child(4){background:#455b65} /* Donazioni */
 .card h3{margin:.1rem 0 .35rem}
-.card .btn{margin-top:.5rem}
+.card p{flex-grow:1}
+.card .btn{margin-top:.5rem;width:fit-content;padding:.5rem .75rem}
 
 /* ============== Buttons ============== */
 .btn{
