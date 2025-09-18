@@ -123,37 +123,75 @@ document.addEventListener('DOMContentLoaded', function() {
     const currentSlide = slides[currentIndex];
     const targetSlide = slides[targetIndex];
 
-    // Rimuovi classe attiva da tutte le slide
-    slides.forEach(slide => slide.classList.remove('is-active'));
-    
-    // Posiziona la nuova slide fuori schermo
-    targetSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
-    targetSlide.style.opacity = '0';
-    targetSlide.classList.add('is-active');
+    // Ottieni elementi di testo per animazioni sincronizzate
+    const currentTexts = currentSlide.querySelectorAll('h1, .pill');
+    const targetTexts = targetSlide.querySelectorAll('h1, .pill');
 
-    // Anima l'entrata della nuova slide e l'uscita di quella corrente
-    requestAnimationFrame(() => {
-      // Nuova slide: entra al centro con fade-in
-      targetSlide.style.transform = 'translateX(0)';
-      targetSlide.style.opacity = '1';
-      
-      // Slide corrente: esce dal lato opposto con fade-out
-      currentSlide.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
-      currentSlide.style.opacity = '0';
+    // Prima fase: fade-out dei testi della slide corrente
+    currentTexts.forEach(text => {
+      text.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+      text.style.opacity = '0';
+      text.style.transform = 'translateY(-10px)';
     });
 
-    // Cleanup dopo la transizione (800ms = durata CSS)
+    // Dopo 150ms, inizia la transizione delle slide
+    setTimeout(() => {
+      // Rimuovi classe attiva da tutte le slide
+      slides.forEach(slide => slide.classList.remove('is-active'));
+      
+      // Posiziona la nuova slide fuori schermo
+      targetSlide.style.transform = direction === 'next' ? 'translateX(100%)' : 'translateX(-100%)';
+      targetSlide.style.opacity = '0';
+      targetSlide.classList.add('is-active');
+
+      // Prepara i testi della nuova slide (invisibili inizialmente)
+      targetTexts.forEach(text => {
+        text.style.transition = 'none';
+        text.style.opacity = '0';
+        text.style.transform = 'translateY(20px)';
+      });
+
+      // Anima l'entrata della nuova slide e l'uscita di quella corrente
+      requestAnimationFrame(() => {
+        // Nuova slide: entra al centro con fade-in
+        targetSlide.style.transform = 'translateX(0)';
+        targetSlide.style.opacity = '1';
+        
+        // Slide corrente: esce dal lato opposto con fade-out
+        currentSlide.style.transform = direction === 'next' ? 'translateX(-100%)' : 'translateX(100%)';
+        currentSlide.style.opacity = '0';
+
+        // Dopo 400ms, anima i testi della nuova slide
+        setTimeout(() => {
+          targetTexts.forEach((text, index) => {
+            text.style.transition = 'opacity 0.6s ease-in-out, transform 0.6s ease-in-out';
+            text.style.transitionDelay = `${0.2 + (index * 0.2)}s`;
+            text.style.opacity = '1';
+            text.style.transform = 'translateY(0)';
+          });
+        }, 400);
+      });
+    }, 150);
+
+    // Cleanup dopo la transizione completa (1200ms totali)
     setTimeout(() => {
       // Reset stili inline per tornare al CSS base
       slides.forEach(slide => {
         slide.style.transform = '';
         slide.style.opacity = '';
+        const texts = slide.querySelectorAll('h1, .pill');
+        texts.forEach(text => {
+          text.style.transition = '';
+          text.style.opacity = '';
+          text.style.transform = '';
+          text.style.transitionDelay = '';
+        });
       });
       
       // Aggiorna stato
       currentIndex = targetIndex;
       isTransitioning = false;
-    }, 800);
+    }, 1200);
   }
 
   /**

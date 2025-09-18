@@ -107,6 +107,32 @@ a:hover{text-decoration:underline}
   background:rgba(255,255,255,.18);border-radius:999px;color:#e9f1f3;font-size:1.25rem
 }
 
+/* Animazioni fade per testi hero */
+.hero__slide h1, .hero__slide .pill {
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+.hero__slide:not(.is-active) h1, 
+.hero__slide:not(.is-active) .pill {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero__slide.is-active h1, 
+.hero__slide.is-active .pill {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ritardo per effetto sequenziale */
+.hero__slide.is-active h1 {
+  transition-delay: 0.2s;
+}
+
+.hero__slide.is-active .pill {
+  transition-delay: 0.4s;
+}
+
 /* Controlli slider */
 .hero__ctrl{
   position:absolute;top:50%;transform:translateY(-50%);
