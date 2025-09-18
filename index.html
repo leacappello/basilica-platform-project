@@ -10,6 +10,8 @@
 
   <!-- Foglio di stile principale -->
   <link rel="stylesheet" href="assets/styles.css" />
+  <!-- link font google-->
+  <link rel="stylesheet" href="https://fonts.google.com/?categoryFilters=Serif:%2FSerif%2FModern">
 
   <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
   <script>document.documentElement.classList.remove('no-js');</script>
@@ -299,128 +301,186 @@
      SEZIONE: I LUOGHI DELLA BASILICA (slider + live webcam)
      ====================================================================== -->
 
-
-  <!--LIVE WEBCAM-->
-  <aside class="live-webcam">
-    <h4>Live Webcam</h4>
-    <img src="images/webcam.jpg" alt="Webcam Basilica">
-    <a class="btn btn--primary" href="#">Guarda ora →</a>
-  </aside>
-
   <section id="luoghi" class="section">
     <div class="container">
-      <h2>I Luoghi della Basilica:</h2>
 
-      <div class="luoghi-slider">
 
-        <!--SLIDE 1 -->
+      <div class="luoghi-grid">
 
-        <div class="luogo-slide active">
-          <img src="images/basilica.jpg" alt="Basilica di San Francesco">
-          <div class="luogo-content">
-            <h3>Basilica di San Francesco</h3>
-            <p class="muted">Voluta da Papa Gregorio IX nel 1228, custodisce le spoglie di San Francesco...</p>
-            <a class="btn btn--primary" href="basilica.html">Scopri la Basilica</a>
+        <!-- WEBCAM LIVE -->
+        <div class="luoghi-webcam">
+          <h3>Webcam Live <br>dalla Cripta</h3>
+          <div class="webcam-frame">
+            <img src="images/frame-webcam.jpg" alt="Webcam Basilica di San Francesco">
+            <iframe src="" title="Webcam Basilica di San Francesco"
+              allow="autoplay; encrypted-media" allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
           </div>
-        </div>
-        <!--SLIDE 2 -->
-
-        <div class="luogo-slide">
-          <img src="images/tomba.jpg" alt="Tomba di San Francesco">
-          <div class="luogo-content">
-            <h3>Tomba di San Francesco</h3>
-            <p class="muted">Meta di milioni di pellegrini, è un semplice sarcofago di pietra nel pilastro centrale...
-            </p>
-            <a class="btn btn--primary" href="tomba.html">Scopri Tomba di San Francesco</a>
           </div>
 
-          <!--SLIDE 3 -->
 
-          <div class="luogo-slide">
-            <img src="images/chiesa-inferiore.jpg" alt="Chiesa Inferiore">
-            <div class="luogo-content">
-              <h3>Chiesa Inferiore</h3>
-              <p class="muted">Costruita nel 1228, presenta affreschi di Giotto e della sua scuola...</p>
-              <a class="btn btn--primary" href="chiesa-inferiore.html">Scopri Chiesa Inferiore</a>
+          <!-- SLIDER -->
+
+          <div class="luoghi-slider">
+
+            <!-- Slide 1 -->
+
+            <div class="luogo-slide active">
+              <div class ="luogo-inner">
+              <img src="images/basilica.jpg" alt="La Basilica di San Francesco">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Basilica di San Francesco in Assisi</h3>
+                <hr>
+                <p>Voluta da Papa Gregorio IX quale "specialis ecclesia" con la Bolla "Recolentes" del 29 aprile 1228,
+                  dal 1230 custodisce le spoglie mortali del...</p>
+                <a href="basilica.html" class="btn-luogo">Scopri la Basilica di San Francesco in Assisi</a>
+              </div>
+              
+            </div>
+            </div>
+
+            <!-- Slide 2 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/tomba.jpg" alt="La Tomba di San Francesco">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Tomba di San Francesco</h3>
+                <hr>
+                <p>La tomba di san Francesco, meta ogni anno di milioni di pellegrini da tutto il mondo, è un semplice
+                  sarcofago di pietra racchiuso nel pilastro...</p>
+                <a href="tomba.html" class="btn-luogo">Scopri la Tomba</a>
+              </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/chiesa-inferiore.jpg" alt="La Chiesa Inferiore">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Chiesa Inferiore</h3>
+                <hr>
+                <p>La chiesa Inferiore della Basilica, la cui costruzione venne avviata nel 1228, era già completata nel
+                  1230, quando vi fu solennemente traslata...</p>
+                <a href="chiesa-inferiore.html" class="btn-luogo">Scopri la Chiesa Inferiore</a>
+              </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/chiesa-superiore.jpg" alt="La Chiesa Superiore">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Chiesa Superiore</h3>
+                <hr>
+                <p>La costruzione della chiesa superiore della Basilica papale di San Francesco in Assisi venne conclusa
+                  nel 1253 da Innocenzo IV....</p>
+                <a href="chiesa-superiore.html" class="btn-luogo">Scopri la Chiesa Superiore</a>
+              </div>
+            </div>
+            </div>
+
+            <!-- Slide 5 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/sacro-convento.jpg" alt="Il Sacro Convento">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Il Sacro Convento</h3>
+                <hr>
+                <p>Consacrato con la Basilica papale da Innocenzo IV nel 1253, il Sacro Convento è caratterizzato da una
+                  storia costruttiva complessa e difficile...</p>
+                <a href="sacro-convento.html" class="btn-luogo">Scopri il Sacro Convento</a>
+              </div>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/biblioteca.jpg" alt="Biblioteca e Archivio">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Biblioteca e Archivio</h3>
+                <hr>
+                <p>All’interno del Sacro Convento di S. Francesco in Assisi hanno la loro sede:
+
+                  - la Biblioteca del Sacro Convento, biblioteca ecclesiastica aperta al pubblico, dipendente dalla
+                  Custodia Generale del Sacro Convento dei Frati Minori Conventuali...</p>
+                <a href="biblioteca.html" class="btn-luogo">Scopri Biblioteca e Archivio</a>
+              </div>
+            </div>
+            </div>
+
+            <!-- Slide 7 -->
+
+            <div class="luogo-slide">
+              <div class="luogo-inner">
+              <img src="images/museo.jpg" alt="Museo del Tesoro">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Museo del Tesoro</h3>
+                <hr>
+                <p>Il Museo del Tesoro della Basilica è sorto e siè sviluppato a partire dal XIII secolo. Il nucleoè
+                  costituito da opere di uso liturgico, custodite nelle sagrestia segreta della Chiesa inferiore...</p>
+                <a href="museo.html" class="btn-luogo">Scopri Museo del Tesoro</a>
+              </div>
             </div>
           </div>
+          <div class="dots">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
 
-          <div class="luogo-slide">
-            <img src="images/chiesa-superiore.jpg" alt="Chiesa Superiore">
-            <div class="luogo-content">
-              <h3>Chiesa Superiore</h3>
-              <p class="muted">Caratterizzata da vetrate colorate e contrafforti a fasci di colonnine...</p>
-              <a class="btn btn--primary" href="chiesa-superiore.html">Scopri Chiesa Superiore</a>
             </div>
-          </div>
 
-          <div class="luogo-slide">
-            <img src="images/sacro-convento.jpg" alt="Sacro Convento">
-            <div class="luogo-content">
-              <h3>Sacro Convento</h3>
-              <p class="muted">Fondato nel 1230, è il cuore spirituale e culturale della comunità francescana...</p>
-              <a class="btn btn--primary" href="sacro-convento.html">Scopri Sacro Convento</a>
             </div>
-          </div>
-
-          <div class="luogo-slide">
-            <img src="images/biblioteca.jpg" alt="Biblioteca e Archivio">
-            <div class="luogo-content">
-              <h3>Biblioteca e Archivio</h3>
-              <p class="muted">Custodisce manoscritti e documenti storici di grande valore...</p>
-              <a class="btn btn--primary" href="biblioteca.html">Scopri Biblioteca e Archivio</a>
-            </div>
-          </div>
-
-          <div class="luogo-slide">
-            <img src="images/museo.jpg" alt="Museo del Tesoro">
-            <div class="luogo-content">
-              <h3>Museo del Tesoro</h3>
-              <p class="muted">Espone opere d'arte e oggetti liturgici di inestimabile valore...</p>
-              <a class="btn btn--primary" href="museo.html">Scopri Museo del Tesoro</a>
-            </div>
-          </div>
-
-          <!-- CONTROLLI SLIDER -->
-
-          <button class="luoghi-prev" aria-label="Slide precedente">‹</button>
-          <button class="luoghi-next" aria-label="Slide successiva">›</button>
-        </div>
-
-
       </div>
-    </div>
-  </section>
 
+        
+  </section>
 
 
 
   <!-- ======================================================================
        FASCIA NUMERI (background con overlay scuro, 4 statistiche)
        ====================================================================== -->
-  <section class="stats" aria-label="Dati sintetici">
-    <div class="container stats__grid">
-      <div>
-        <div class="icon" aria-hidden="true">⌛</div>
-        <div class="n">797</div>
-        <p>Anni di storia</p>
-      </div>
-      <div>
-        <div class="icon" aria-hidden="true">🖼</div>
-        <div class="n">10.000</div>
-        <p>mq. di affreschi</p>
-      </div>
-      <div>
-        <div class="icon" aria-hidden="true">👥</div>
-        <div class="n">53</div>
-        <p>Frati da tutto il mondo</p>
-      </div>
-      <div>
-        <div class="icon" aria-hidden="true">😊</div>
-        <div class="n">10.000</div>
-        <p>Pellegrini al giorno</p>
-      </div>
+  <div class="container stats__grid">
+    <div>
+      <div class="icon" aria-hidden="true">⌛</div>
+      <div class="n">797</div>
+      <p>Anni di storia</p>
     </div>
+    <div>
+      <div class="icon" aria-hidden="true">🖼</div>
+      <div class="n">10.000</div>
+      <p>mq. di affreschi</p>
+    </div>
+    <div>
+      <div class="icon" aria-hidden="true">👥</div>
+      <div class="n">53</div>
+      <p>Frati da tutto il mondo</p>
+    </div>
+    <div>
+      <div class="icon" aria-hidden="true">😊</div>
+      <div class="n">10.000</div>
+      <p>Pellegrini al giorno</p>
+    </div>
+  </div>
   </section>
 
   <!-- ======================================================================
@@ -501,6 +561,36 @@
 
   <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
   <script src="assets/script.js"></script>
+  <script>
+  const slides = document.querySelectorAll('.luogo-slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    current = index;
+  }
+
+  function nextSlide() {
+    let next = (current + 1) % slides.length;
+    showSlide(next);
+  }
+
+  // Autoplay ogni 5 secondi
+  setInterval(nextSlide, 5000);
+
+  // Click sui pallini
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => showSlide(i));
+  });
+
+  // Mostra la prima slide all'avvio
+  showSlide(0);
+</script>
+
 </body>
 
 </html>

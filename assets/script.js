@@ -111,5 +111,3 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesWrap.addEventListener("mouseleave", () => (timer = setInterval(next, 7000)));
   }
 })();
-
-
