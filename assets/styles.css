@@ -90,7 +90,7 @@ a:hover{text-decoration:underline}
 .nav__sub a{display:block;padding:.5rem .75rem;border-radius:6px}
 .nav__sub a:hover{background:#f7f7f9}
 
-/* ============== Hero (slider + overlay cards) ============== */
+/* =============================================== Hero (slider + overlay cards) ============================================= */
 .hero{position:relative;background:#fff;color:#fff}
 .hero__slides{position:relative;overflow:hidden;height:62vh;min-height:420px}
 .hero__slide{

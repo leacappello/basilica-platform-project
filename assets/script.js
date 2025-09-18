@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (current && sectionsMap.has(current)) setActiveLink(current);
 });
 
-/* 4) CAROUSEL HERO --------------------------------------------------------
+/* 4) CAROUSEL HERO ------------------------------------------------------------------------------------------------------
    Sistema di scorrimento immagini con transizioni fluide
    - Autoplay ogni 7 secondi con pausa su hover
    - Controlli manuali (frecce prev/next)
