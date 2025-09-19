@@ -258,28 +258,13 @@ input, textarea{
   resize: none;
 }
 
-.btn{
+input[type="submit"]{
   background-color: var(--accent);
   color: #fff;
   cursor: pointer;
-  width: 100px;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  
 }
 
 
-select{
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-label{
-  display: block;
-  font-weight: 600;
-  margin-bottom: var(--space-2);
-  }
 
 .form-container {
   display: flex;

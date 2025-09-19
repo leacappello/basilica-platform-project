@@ -258,14 +258,20 @@ input, textarea{
   resize: none;
 }
 
+input[type="submit"]{
+  background-color: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
 .btn{
   background-color: var(--accent);
   color: #fff;
   cursor: pointer;
   width: 100px;
+  text-align: center;
   padding: var(--space-4);
   border-radius: var(--radius);
-  
 }
 
 

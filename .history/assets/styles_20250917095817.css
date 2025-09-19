@@ -265,7 +265,7 @@ input, textarea{
   width: 100px;
   padding: var(--space-4);
   border-radius: var(--radius);
-  
+  align-items: center;
 }
 
 

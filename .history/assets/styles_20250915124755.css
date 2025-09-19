@@ -212,14 +212,15 @@ a:hover{text-decoration:underline}
 .no-js .nav{display:block}
 
 /* ============== Tabella Orari ============== */
-.tabella-orari{
+.orari table{
   width:100%;
   border-collapse:collapse;
+  padding:.5rem;
+  border:1px solid var(--border)
 }
 .orari th,.orari td{
   padding:.5rem;
-  border-bottom:1px solid var(--border);
-  text-align: left;
+  border-bottom:1px solid var(--border)
 }
 
 .titolo-orari{
@@ -229,72 +230,3 @@ a:hover{text-decoration:underline}
   padding-bottom:.5rem
 }
 /* ============== Tabella Orari ============== */
-
-
-/* ============== contatti ============== */
-.container-col{
-  display:flex;
-}
-.container-form{
-  width: 70%;
-  padding: var(--space-10);
-}
-.container-info{
-  width: 30%;
-  padding: var(--space-10);
-  border-left: 1px solid var(--border);
-}
-
-form{
-  display:flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
-input, textarea{
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  resize: none;
-}
-
-.btn{
-  background-color: var(--accent);
-  color: #fff;
-  cursor: pointer;
-  width: 100px;
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  
-}
-
-
-select{
-  padding: var(--space-4);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-}
-
-label{
-  display: block;
-  font-weight: 600;
-  margin-bottom: var(--space-2);
-  }
-
-.form-container {
-  display: flex;
-  flex-direction: column; /* Organizza gli elementi in colonna */
-  gap: 1rem; /* Aggiunge spazio tra gli elementi */
-  width: 100%; /* Assicura che il contenitore occupi tutta la larghezza disponibile */
-}
-
-.column {
-  flex: 1; /* Fa sì che le colonne occupino uno spazio uguale */
-  display: flex; /* Per permettere il posizionamento dei campi all'interno della colonna */
-  flex-direction: column;
-  gap: 0.5rem; /* Spazio tra i campi all'interno della colonna */
-}
-
-/* ============== contatti ============== */
-
-

@@ -258,6 +258,7 @@ input, textarea{
   resize: none;
 }
 
+
 .btn{
   background-color: var(--accent);
   color: #fff;
@@ -265,7 +266,6 @@ input, textarea{
   width: 100px;
   padding: var(--space-4);
   border-radius: var(--radius);
-  
 }
 
 
