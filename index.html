@@ -5,19 +5,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)">
+    content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)"/>
   <title>Basilica — Progetto gemello</title>
 
   <!-- Foglio di stile principale -->
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/styles.css">
   <!-- link font google-->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400&display=swap" rel="stylesheet">
-
-  <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap" rel="stylesheet">
-
-  >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
   <script>document.documentElement.classList.remove('no-js');</script>
@@ -452,6 +449,7 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   <!-- ======================================================================
@@ -460,9 +458,7 @@
 
   <section id="san-francesco" class="section section--sanfrancesco">
     <div class="container">
-
       <div class="san-francesco-grid">
-
         <div class="san-francesco-content">
           <div class="first-section">
             <h2>Conosci San<br> Francesco?</h2>
@@ -535,28 +531,42 @@
   <!-- ======================================================================
        FASCIA NUMERI (background con overlay scuro, 4 statistiche)
        ====================================================================== -->
-  <div class="container stats__grid">
-    <div>
-      <div class="icon" aria-hidden="true">⌛</div>
-      <div class="n">797</div>
-      <p>Anni di storia</p>
+  <section id="stats" class="section section--stats">
+    <div class="stats__grid">
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+          <div class="n" data-target="797">0</div>
+        </div>
+        <hr>
+        <p>Anni di storia</p>
+      </div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-image"></i></div>
+          <div class="n" data-target="10000">0</div>
+        </div>
+        <hr>
+        <p>mq. di affreschi</p>
+      </div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-user"></i><i class="fa-solid fa-user"></i></div>
+          <div class="n" data-target="53">0</div>
+        </div>
+        <hr>
+        <p>Frati da tutto il mondo</p>
+      </div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-face-smile"></i></div>
+          <div class="n" data-target="10000"></div>
+        </div>
+        <hr>
+        <p>Pellegrini al giorno</p>
+
+      </div>
     </div>
-    <div>
-      <div class="icon" aria-hidden="true">🖼</div>
-      <div class="n">10.000</div>
-      <p>mq. di affreschi</p>
-    </div>
-    <div>
-      <div class="icon" aria-hidden="true">👥</div>
-      <div class="n">53</div>
-      <p>Frati da tutto il mondo</p>
-    </div>
-    <div>
-      <div class="icon" aria-hidden="true">😊</div>
-      <div class="n">10.000</div>
-      <p>Pellegrini al giorno</p>
-    </div>
-  </div>
   </section>
 
   <!-- ======================================================================
@@ -614,6 +624,32 @@
 
     // Mostra la prima slide all'avvio
     showSlide(0);
+
+    // Contatore numerico
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll('.n');
+
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'), 10);
+        let count = 0;
+        const duration = 2000;
+        const frameRate = 60;
+        const totalFrames = Math.round(duration / (500 / frameRate));
+        const increment = target / totalFrames;
+
+        const updateCount = () => {
+          count += increment;
+          if (count < target) {
+            counter.textContent = Math.round(count).toLocaleString();
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.textContent = target.toLocaleString();
+          }
+        };
+
+        updateCount();
+      });
+    });
   </script>
 
 </body>
