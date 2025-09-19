@@ -579,66 +579,303 @@ a:hover {
   display: block;
 }
 
-/* =================== Places =================== */
-/* Etichetta visiva che identifica il blocco Places nel CSS */
+/* =================== PLACES  =================== */
 
+/* Sezione principale Places */
 .places {
-  /* Selettore principale della sezione "places" (wrapper esterno) */
-  background: var(
-    --surface
-  ); /* Imposta lo sfondo usando la variabile --surface (colore di superficie) */
-  padding-block: var(
-    --space-10
-  ); /* Padding verticale (top e bottom) usando la variabile --space-10 */
+  background: var(--surface);
+  padding-block: var(--space-10);
+  position: relative;
 }
 
+/* Linea decorativa superiore */
+.places::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--brand),
+    transparent
+  ); /* Gradiente orizzontale che sfuma verso il brand al centro */
+}
+
+/* Header della sezione */
+.places__header {
+  text-align: center;
+  margin-bottom: calc(
+    var(--space-10) * 1.2
+  ); /* Spazio sotto l'header; calcolo dinamico basato su variabile */
+}
+
+.places__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--brand);
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+
+.places__title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  margin: var(--space-4) auto;
+  border-radius: 2px;
+}
+
+.places__subtitle {
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-style: italic;
+  line-height: var(--lh);
+}
+
+/* Griglia delle card  */
 .places__grid {
-  /* Contenitore a griglia che dispone le card dei luoghi */
-  display: grid; /* Attiva il layout a griglia CSS */
+  display: grid;
   grid-template-columns: repeat(
     auto-fit,
-    minmax(240px, 1fr)
-  ); /* Crea colonne responsive: ogni colonna almeno 240px, si adattano automaticamente */
-  gap: 1.5rem; /* Spaziatura (gap) tra righe e colonne della griglia */
+    minmax(320px, 1fr)
+  ); /* Colonne responsive: crea colonne min 320px, si adattano allo spazio disponibile */
+  gap: calc(var(--space-8) * 0.75);
+  margin-top: var(--space-8);
 }
 
+/* Struttura delle Cards */
 .place-card {
-  /* Stile base per ogni card/link che rappresenta un luogo */
-  display: block; /* Fa comportare l'ancora come un blocco (intera area cliccabile) */
-  background: #fff; /* Sfondo bianco per la card */
-  border-radius: var(
-    --radius
-  ); /* Angoli arrotondati con la variabile --radius */
-  box-shadow: var(--shadow); /* Ombra della card usando la variabile --shadow */
-  overflow: hidden; /* Nasconde eventuali overflow (utile per immagini con border-radius) */
-  text-align: center; /* Centra il contenuto testuale orizzontalmente */
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease; /* Transizioni fluide per trasformazioni e ombra al passaggio del mouse */
+  background: var(--bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit; /* Testo eredita il colore dal contesto */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transizione fluida per hover/transform */
+  position: relative;
+  aspect-ratio: 4/3; /* Mantiene rapporto larghezza/altezza 4:3 */
+  display: block;
 }
 
 .place-card:hover {
-  /* Stato hover della card (quando il mouse è sopra) */
-  transform: translateY(
-    -4px
-  ); /* Solleva leggermente la card per effetto di profondità */
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15); /* Ombra più pronunciata in hover per enfatizzare la card */
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(59, 89, 97, 0.15);
+  text-decoration: none;
+}
+
+.place-card:focus {
+  /* Stile di focus (utile per accessibilità) */
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
+}
+
+/* Wrapper immagine */
+.place-card__image-wrapper {
+  position: relative;
+  height: 70%;
+  overflow: hidden;
 }
 
 .place-card img {
-  /* Stili per l'immagine all'interno della card */
-  width: 100%; /* L'immagine occupa tutta la larghezza del suo contenitore */
-  height: 180px; /* Altezza fissa per uniformare le card */
-  object-fit: cover; /* Scala e ritaglia l'immagine mantenendo il suo aspect ratio, riempiendo l'area */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'immagine scala e ritaglia per coprire l'area mantenendo proporzioni */
+  transition: transform 0.6s ease;
 }
 
-.place-card span {
-  /* Stile per l'etichetta testuale sotto l'immagine */
-  display: block; /* Rende lo span un blocco per poter applicare padding e larghezza */
-  padding: 1rem; /* Spazio interno attorno al testo */
-  font-weight: 600; /* Peso del font leggermente più marcato */
-  font-size: 1.1rem; /* Dimensione del testo leggermente superiore alla base */
-  color: var(
-    --brand
-  ); /* Colore del testo usando la variabile --brand (colore primario del brand) */
+.place-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay gradiente */
+.place-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 40%,
+    rgba(31, 41, 55, 0.1) 70%,
+    rgba(31, 41, 55, 0.4) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.place-card:hover .place-card__overlay {
+  /* Quando la card è hover, mostra l'overlay */
+  opacity: 1; /* Imposta overlay visibile */
+}
+
+/* Icona decorativa */
+.place-card__icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(59, 89, 97, 0.1);
+}
+
+.place-card:hover .place-card__icon {
+  /* Stili dell'icona quando la card è hover */
+  background: var(--brand);
+  color: var(--bg);
+  transform: scale(1.1);
+  border-color: var(--brand);
+}
+
+/* Contenuto testuale */
+.place-card__content {
+  padding: var(--space-6);
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--bg);
+  position: relative;
+}
+
+.place-card span, /* tutti gli span dentro .place-card */
+.place-card__title {
+  /* condividono gli stili */
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--fg);
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.place-card:hover span, /* Quando la card è hover, span interno cambia colore,
+così anche .place-card__title */
+.place-card:hover .place-card__title {
+  color: var(--brand);
+}
+
+/* Badge per informazioni aggiuntive */
+.place-card__badge {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background: rgba(59, 89, 97, 0.9);
+  color: var(--bg);
+  padding: var(--space-2) var(--space-3);
+  border-radius: 15px;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.place-card:hover .place-card__badge {
+  /* Alla hover della card il badge appare */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =================== RESPONSIVE DESIGN =================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .places__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+
+  .places__title {
+    /* Adatta il titolo su tablet */
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .places {
+    padding-block: var(--space-8);
+  }
+
+  .places__header {
+    margin-bottom: var(--space-8);
+  }
+
+  .places__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .place-card {
+    aspect-ratio: 3/2;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .places__title {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+  }
+
+  .place-card__content {
+    padding: var(--space-4);
+  }
+
+  .place-card span {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* =================== ACCESSIBILITÀ =================== */
+
+/* Riduzione movimento per utenti che preferiscono meno animazioni */
+@media (prefers-reduced-motion: reduce) {
+  .place-card, /* Lista dei selettori per annullare le transizioni */
+  .place-card img,
+  .place-card__overlay,
+  .place-card__icon,
+  .place-card span,
+  .place-card__badge {
+    transition: none;
+  }
+
+  .place-card:hover {
+    /* Se l'utente ha reduce-motion l'hover viene annullato */
+    transform: none;
+  }
+
+  .place-card:hover img {
+    /* No transform dell'immagine */
+    transform: none;
+  }
+
+  .place-card:hover .place-card__icon {
+    /* Mantiene un feedback minimo sull'icona anche in reduce-motion  */
+    transform: scale(1.05);
+  }
+}
+
+/* Focus migliorato per navigazione da tastiera */
+.place-card:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 4px;
 }

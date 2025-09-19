@@ -330,41 +330,108 @@
       </div>
     </section>
 
-    <!-- =================== PLACES =================== -->
-    <!--Ogni card è un link che porta alla sezione corrispondente (#basilica, #tomba, #museo)-->
-    <section id="places" class="places">
-      <!-- Wrapper centrato e griglia: limita la larghezza e dispone le card in una griglia -->
-      <div class="container places__grid">
-        <!-- Place 1: Basilica -->
-        <!-- link che porta alla sezione con id=basilica -->
-        <a href="#basilica" class="place-card">
-          <!-- Immagine della card: src percorso file; alt testo alternativo; loading="lazy"
-        migliora le performance -->
-          <img
-            src="images/basilica.jpg"
-            alt="La Basilica di San Francesco"
-            loading="lazy"
-          />
-          <span>Basilica</span>
-        </a>
+    <!-- =================== PLACES  =================== -->
+    <!-- aria-labelldby collega il titolo per screen reader -->
+    <section id="places" class="places" aria-labelledby="places-title">
+      <div class="container">
+        <!-- Header della sezione -->
+        <header class="places__header">
+          <h2 id="places-title" class="places__title">Luoghi Sacri</h2>
+          <p class="places__subtitle">
+            I luoghi più significativi della spiritualità francescana ad Assisi
+          </p>
+        </header>
 
-        <!-- Place 2: Tomba -->
-        <!-- link che porta alla sezione con id=tomba -->
-        <a href="#tomba" class="place-card">
-          <img
-            src="images/tomba.jpg"
-            alt="Tomba di San Francesco"
-            loading="lazy"
-          />
-          <span>Tomba di San Francesco</span>
-        </a>
+        <!-- Griglia delle card dei luoghi -->
+        <ul class="places__grid">
+          <!-- Place 1: Basilica -->
+          <li>
+            <article class="place-card">
+              <!-- Link che punta ad un'ancora nella pagina; aria-describedby 
+             collega la descrizione nascosta (per fornire testo accessibile aggiuntivo) -->
+              <a href="#basilica" aria-describedby="basilica-desc">
+                <!-- Wrapper per immagine + overlay + badge — mantiene layout e stacking -->
+                <div class="place-card__image-wrapper">
+                  <img src="images/basilica.jpg" alt="" loading="lazy" />
+                  <!-- Elemento visivo (overlay) per scurire l'immagine al passaggio del mouse; 
+                 aria-hidden="true" la nasconde ai lettori di schermo -->
+                  <div class="place-card__overlay" aria-hidden="true"></div>
 
-        <!-- Place 3: Museo -->
-        <!-- link che porta alla sezione con id=museo -->
-        <a href="#museo" class="place-card">
-          <img src="images/museo.jpg" alt="Museo del Tesoro" loading="lazy" />
-          <span>Museo del Tesoro</span>
-        </a>
+                  <!-- Icona visiva (emoji) rappresentativa; nascondi agli screen reader con aria-hidden 
+                 se non apporta informazione utile -->
+                  <div class="place-card__icon" aria-hidden="true">⛪</div>
+
+                  <!--Badge testuale in sovrimpressione; è visivo, 
+                quindi aria-hidden="true" lo rende ignorato dai lettori di schermo -->
+                  <div class="place-card__badge" aria-hidden="true">
+                    Chiesa Superiore e Inferiore
+                  </div>
+                  <!-- Il badge resta decorativo visivamente, viene letto lo stesso e si mantiene comunque nascosto,
+                   chi vede la pagina legge il badge grafico e chi usa lo screen reader legge lo span.sr-only nascosto -->
+                  <span class="sr-only">Chiesa Superiore e Inferiore</span>
+                </div>
+                <!-- Wrapper per il contenuto testuale della card (titolo, ecc.) -->
+                <div class="place-card__content">
+                  <span class="place-card__title">Basilica</span>
+                </div>
+              </a>
+              <!-- Elemento nascosto visivamente (classe sr-only) che contiene la descrizione riferita 
+             da aria-describedby sul link  (una pratica per aggiungere testo accessibile) -->
+              <div id="basilica-desc" class="sr-only">
+                Basilica di San Francesco, capolavoro dell'arte gotica italiana
+                con gli affreschi di Giotto
+              </div>
+            </article>
+          </li>
+
+          <!-- Place 2: Tomba -->
+          <li>
+            <article class="place-card">
+              <a href="#tomba" aria-describedby="tomba-desc">
+                <div class="place-card__image-wrapper">
+                  <img src="images/tomba.jpg" alt="" loading="lazy" />
+                  <div class="place-card__overlay" aria-hidden="true"></div>
+                  <div class="place-card__icon" aria-hidden="true">🕊️</div>
+                  <div class="place-card__badge" aria-hidden="true">
+                    Cripta del Santo
+                  </div>
+                  <span class="sr-only">Cripta del Santo</span>
+                </div>
+                <div class="place-card__content">
+                  <span class="place-card__title">Tomba di San Francesco</span>
+                </div>
+              </a>
+              <div id="tomba-desc" class="sr-only">
+                Tomba di San Francesco, luogo di riposo eterno del Poverello e
+                meta di pellegrinaggio
+              </div>
+            </article>
+          </li>
+
+          <!-- Place 3: Museo -->
+          <li>
+            <article class="place-card">
+              <a href="#museo" aria-describedby="museo-desc">
+                <div class="place-card__image-wrapper">
+                  <img src="images/museo.jpg" alt="" loading="lazy" />
+                  <div class="place-card__overlay" aria-hidden="true"></div>
+                  <div class="place-card__icon" aria-hidden="true">💎</div>
+                  <div class="place-card__badge" aria-hidden="true">
+                    Collezione Perkins
+                  </div>
+                  <span class="sr-only">Collezione Perkins</span>
+                </div>
+                <div class="place-card__content">
+                  <span class="place-card__title">Museo del Tesoro</span>
+                </div>
+              </a>
+              <div id="museo-desc" class="sr-only">
+                Museo del Tesoro, raccolta di opere d'arte sacra e reliquie
+                francescane
+              </div>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
 
