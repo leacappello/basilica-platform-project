@@ -36,7 +36,7 @@
 *{box-sizing:border-box; margin: 0; border: 0; padding: 0;}
 html,body{margin:0}
 html, html a{-webkit-font-smoothing: antialiased;}
-html{max-width: 100%; font-size: 100%; font-size: 10px; -webkit-tap-highlight-color: rgba(0,0,0,0); -webkit-text-size-adjust: 100%;}
+html{max-width: 100%; font-size: 100%; font-size: 10px; -webkit-tap-highlight-color: rgba(0,0,0,0);}
 body{
   font:400 var(--fs-base)/var(--lh) ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial; font-size: 14px;
   color:var(--fg); background:var(--bg); line-height: 1.7;
@@ -512,6 +512,7 @@ a:hover{text-decoration:underline}
 /* ============== No-JS fallback ============== */
 .no-js .nav{display:block}
 
+ HEAD
 /* === MAIN MEDIA SECTION === */
 
 #main-media {

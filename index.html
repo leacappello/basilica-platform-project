@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="it" class="no-js">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)">
+  <meta name="description"
+    content="Basilica — Portale gemello (look & feel dimostrativo, contenuti e immagini originali)">
   <title>Basilica — Progetto gemello</title>
 
   <!-- Foglio di stile principale -->
@@ -12,6 +14,7 @@
   <!-- Se JS è attivo, rimuoviamo la classe .no-js (utile per fallback menu) -->
   <script>document.documentElement.classList.remove('no-js');</script>
 </head>
+
 <body>
 
   <!-- ======================================================================
@@ -40,9 +43,9 @@
     <div class="container masthead__inner">
       <!-- BRAND: logo + denominazione (il logo è decorativo; il nome è testuale) -->
       <a class="brand" href="#home" aria-label="Vai alla Home">
-        <img src="images/logo.svg" alt="" class="brand__logo" aria-hidden="true"/>
+        <img src="images/logo.svg" alt="" class="brand__logo" aria-hidden="true" />
         <span class="brand__name">
-          Basilica Papale e Sacro Convento di<br/>
+          Basilica Papale e Sacro Convento di<br />
           <strong>San Francesco in Assisi</strong>
         </span>
       </a>
@@ -290,30 +293,273 @@
     </div>
   </section>
 
+
+<!-- ======================================================================
+     SEZIONE: I LUOGHI DELLA BASILICA (slider + live webcam)
+     ====================================================================== -->
+
+  <section id="luoghi" class="section">
+    <div class="container">
+
+
+      <div class="luoghi-grid">
+
+        <!-- WEBCAM LIVE -->
+        <div class="luoghi-webcam">
+          <h3>Webcam Live <br>dalla Cripta</h3>
+          <div class="webcam-frame">
+            <img src="images/frame-webcam.jpg" alt="Webcam Basilica di San Francesco">
+            <iframe src="" title="Webcam Basilica di San Francesco" allow="autoplay; encrypted-media" allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </div>
+
+
+        <!-- SLIDER -->
+
+        <div class="luoghi-slider">
+
+          <!-- Slide 1 -->
+
+          <div class="luogo-slide active">
+            <div class="luogo-inner">
+              <img src="images/basilica.jpg" alt="La Basilica di San Francesco">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Basilica di San Francesco in Assisi</h3>
+                <hr>
+                <p>Voluta da Papa Gregorio IX quale "specialis ecclesia" con la Bolla "Recolentes" del 29 aprile 1228,
+                  dal 1230 custodisce le spoglie mortali del...</p>
+                <a href="basilica.html" class="btn-luogo">Scopri la Basilica di San Francesco in Assisi</a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/tomba.jpg" alt="La Tomba di San Francesco">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Tomba di San Francesco</h3>
+                <hr>
+                <p>La tomba di san Francesco, meta ogni anno di milioni di pellegrini da tutto il mondo, è un semplice
+                  sarcofago di pietra racchiuso nel pilastro...</p>
+                <a href="tomba.html" class="btn-luogo">Scopri la Tomba</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/chiesa-inferiore.jpg" alt="La Chiesa Inferiore">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Chiesa Inferiore</h3>
+                <hr>
+                <p>La chiesa Inferiore della Basilica, la cui costruzione venne avviata nel 1228, era già completata nel
+                  1230, quando vi fu solennemente traslata...</p>
+                <a href="chiesa-inferiore.html" class="btn-luogo">Scopri la Chiesa Inferiore</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/chiesa-superiore.jpg" alt="La Chiesa Superiore">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>La Chiesa Superiore</h3>
+                <hr>
+                <p>La costruzione della chiesa superiore della Basilica papale di San Francesco in Assisi venne conclusa
+                  nel 1253 da Innocenzo IV....</p>
+                <a href="chiesa-superiore.html" class="btn-luogo">Scopri la Chiesa Superiore</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/sacro-convento.jpg" alt="Il Sacro Convento">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Il Sacro Convento</h3>
+                <hr>
+                <p>Consacrato con la Basilica papale da Innocenzo IV nel 1253, il Sacro Convento è caratterizzato da una
+                  storia costruttiva complessa e difficile...</p>
+                <a href="sacro-convento.html" class="btn-luogo">Scopri il Sacro Convento</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/biblioteca.jpg" alt="Biblioteca e Archivio">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Biblioteca e Archivio</h3>
+                <hr>
+                <p>All’interno del Sacro Convento di S. Francesco in Assisi hanno la loro sede:
+
+                  - la Biblioteca del Sacro Convento, biblioteca ecclesiastica aperta al pubblico, dipendente dalla
+                  Custodia Generale del Sacro Convento dei Frati Minori Conventuali...</p>
+                <a href="biblioteca.html" class="btn-luogo">Scopri Biblioteca e Archivio</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 7 -->
+
+          <div class="luogo-slide">
+            <div class="luogo-inner">
+              <img src="images/museo.jpg" alt="Museo del Tesoro">
+              <div class="luogo-content">
+                <h4>I luoghi della Basilica:</h4>
+                <h3>Museo del Tesoro</h3>
+                <hr>
+                <p>Il Museo del Tesoro della Basilica è sorto e siè sviluppato a partire dal XIII secolo. Il nucleoè
+                  costituito da opere di uso liturgico, custodite nelle sagrestia segreta della Chiesa inferiore...</p>
+                <a href="museo.html" class="btn-luogo">Scopri Museo del Tesoro</a>
+              </div>
+            </div>
+          </div>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       Sezione 'Conosci San Francesco?'
+       ====================================================================== -->
+
+  <section id="san-francesco" class="section section--sanfrancesco">
+    <div class="container">
+      <div class="san-francesco-grid">
+        <div class="san-francesco-content">
+          <div class="first-section">
+            <h2>Conosci San<br> Francesco?</h2>
+            <p class="text-1"> I resti mortali di San<br>
+              Francesco d’Assisi riposano<br>
+              nella Basilica da ottocento<br>
+              anni
+              insieme a quelli dei<br>
+              suoi primi compagni.<br>
+              Questo luogo santo,<br>
+              insieme alle altre chiese,<br>
+              fanno di Assisi una vera e<br>
+              propria città-santuario.</p>
+          </div>
+        </div>
+
+        <div class="san-francesco-content-2">
+          <img src="images/san-francesco1.jpeg" alt="San Francesco">
+          <div class="san-francesco-text">
+            <h3>Storia di un Santo</h3>
+            <hr>
+            <p><strong>1181-82: nasce in Assisi Francesco da Pietro di Bernardone e madonna ‘Pica’.</strong> Al momento
+              della nascita il
+              padre è in viaggio d'affari ...</p>
+          </div>
+          <div class="san-francesco-link">
+            <a href="storia.html" class="link-francesco">
+              Leggi tutto <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="san-francesco-content-2">
+          <img src="images/san-francesco2.jpeg" alt="San Francesco">
+          <div class="san-francesco-text">
+            <h3>Un uomo di nome Francesco</h3>
+            <hr>
+            <p><strong>Com'è nato il Cantico di frate Sole?</strong> - Tra le biografie di Francesco d'Assisi, è la
+              Compilazione di Assisi
+              a raccontare con molti particolari ...</p>
+          </div>
+          <div class="san-francesco-link">
+            <a href="storia.html" class="link-francesco">
+              Leggi tutto <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="san-francesco-content-2">
+          <img src="images/san-francesco3.jpeg" alt="Basilica">
+          <div class="san-francesco-text">
+            <h3>Francesco e la Basilica</h3>
+            <hr>
+            <p><strong>La Cappella della Maddalena nella Chiesa Inferiore</strong> - La Cappella della Maddalena nella
+              Chiesa Inferiore - Nella terza cappella laterale destra della navata
+              centrale della Chiesa Inferiore ...</p>
+          </div>
+          <div class="san-francesco-link">
+            <a href="storia.html" class="link-francesco">
+              Leggi tutto <span class="arrow">→</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ======================================================================
        FASCIA NUMERI (background con overlay scuro, 4 statistiche)
        ====================================================================== -->
-  <section class="stats" aria-label="Dati sintetici">
-    <div class="container stats__grid">
-      <div>
-        <div class="icon" aria-hidden="true">⌛</div>
-        <div class="n">797</div>
+  <section id="stats" class="section section--stats">
+    <div class="stats__grid">
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fas fa-hourglass-half"></i></div>
+          <div class="n" data-target="797">0</div>
+        </div>
+        <hr>
         <p>Anni di storia</p>
       </div>
-      <div>
-        <div class="icon" aria-hidden="true">🖼</div>
-        <div class="n">10.000</div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-image"></i></div>
+          <div class="n" data-target="10000">0</div>
+        </div>
+        <hr>
         <p>mq. di affreschi</p>
       </div>
-      <div>
-        <div class="icon" aria-hidden="true">👥</div>
-        <div class="n">53</div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-user"></i><i class="fa-solid fa-user"></i></div>
+          <div class="n" data-target="53">0</div>
+        </div>
+        <hr>
         <p>Frati da tutto il mondo</p>
       </div>
-      <div>
-        <div class="icon" aria-hidden="true">😊</div>
-        <div class="n">10.000</div>
+      <div class="stats-item">
+        <div class="stat-row">
+          <div class="icon" aria-hidden="true"><i class="fa-solid fa-face-smile"></i></div>
+          <div class="n" data-target="10000"></div>
+        </div>
+        <hr>
         <p>Pellegrini al giorno</p>
+
       </div>
     </div>
   </section>
@@ -343,139 +589,8 @@
     </div>
   </section>
 
-  <!-- Sezione: Main Media -->
-  <section id="main-media" aria-labelledby="main-media-title">
-    <div class="media-intro">
-      <h2 id="main-media-title">Foto e Video</h2>
-      <p>Galleria di immagini rappresentative della Basilica, eventi e visite virtuali.</p>
-    </div>
-
-  <!-- Featured -->
-    <div class="media-grid">
-      <article class="media-card" tabindex="0">
-        <figure class="media-figure">
-          <img src="images/featured-1.jpg"
-             alt="Veduta della basilica - facciata"
-             loading="lazy"
-             data-gallery="main"
-             data-index="0">
-          <figcaption class="meta">
-            <strong>La Basilica</strong><br><small>Scopri i luoghi</small>
-          </figcaption>
-        </figure>
-      </article>
-
-      <article class="media-card" tabindex="0">
-        <figure class="media-figure">
-          <img src="images/featured-2.jpg"
-             alt="Interno della cripta"
-             loading="lazy"
-             data-gallery="main"
-             data-index="1">
-          <figcaption class="meta">
-            <strong>La Cripta</strong><br><small>Visite e orari</small>
-          </figcaption>
-        </figure>
-      </article>
-
-      <article class="media-card" tabindex="0">
-        <figure class="media-figure">
-          <img src="images/featured-3.jpg"
-             alt="Evento liturgico nella piazza"
-             loading="lazy"
-             data-gallery="main"
-             data-index="2">
-          <figcaption class="meta">
-            <strong>Eventi</strong><br><small>Calendario</small>
-          </figcaption>
-        </figure>
-      </article>
-    </div>
-
-    <!-- Galleria -->
-    <h3 style="margin-top:1.25rem">Galleria fotografica</h3>
-    <div class="media-grid" role="list" aria-label="Galleria fotografica">
-      <figure class="media-card" role="listitem">
-        <img src="images/gallery-1.jpg" alt="Frate che prega" loading="lazy" data-gallery="gallery" data-index="0">
-        <figcaption>Frate nella preghiera</figcaption>
-      </figure>
-      <figure class="media-card" role="listitem">
-        <img src="images/gallery-2.jpg" alt="Particolare affresco" loading="lazy" data-gallery="gallery" data-index="1">
-        <figcaption>Particolare affresco</figcaption>
-      </figure>
-      <figure class="media-card" role="listitem">
-        <img src="images/gallery-3.jpg" alt="Chiostro al tramonto" loading="lazy" data-gallery="gallery" data-index="2">
-        <figcaption>Chiostro</figcaption>
-      </figure>
-      <!-- aggiungi altre miniature -->
-    </div>
-  </section>
-
-
-  <!-- ======================================================================
-       FOOTER “mega”: 4 colonne + riga legale con anno dinamico
-       ====================================================================== -->
-<footer id="footer" class="footer bg-black-222">
-  <div class="container pt-70 pb-40">
-    <div class="row border-bottom-black">
-      <div class="col-sm-6 col-md-3">
-        <div class="widget dark">
-					<img class="mt-10 mb-20" alt="" src="images/logofooter.png">
-					<p>CUSTODIA GENERALE DEL SACRO CONVENTO DI SAN FRANCESCO DEI FRATI MINORI CONVENTUALI</p>
-          <p>Piazza San Francesco, 2 - 06081 Assisi (PG) Italy</p>
-          <ul class="list-inline mt-5">
-            <li class="m-0 pl-10 pr-10"> <img src="images/icons-footer/letter-icon.png"> <a class="text-gray" href="#">info@sanfrancescoassisi.org</a> </li>
-            <li class="m-0 pl-10 pr-10"> <img src="images/icons-footer/globe-icon.png"> <a class="text-gray" href="https://www.sanfrancescoassisi.org">www.sanfrancescoassisi.org</a> </li>
-          </ul>
-					<p>P.I. 00516830544<br>C.F. 80002810549</p>
-        </div>
-      </div>
-
-
-
-    </div>
-    <div class="row">
-      <div class="col-md-5">
-        <div class="widget dark">
-                </div>
-      </div>
-      <div class="col-md-3 col-md-offset-1">
-        <div class="widget dark">
-          <h5 class="widget-title">Contatto diretto con:</h5> 
-          <div class="text-gray">
-                        <a href="#">+(39) 075 819001 </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="widget dark">
-          <h5 class="widget-title">Siamo presenti nei social</h5>
-          <ul class="social-icons icon-dark icon-circled icon-sm">
-	          <li><a href="#" target="_blank"><img src="/images/icons-footer/whatsapp-icon.png"></a></li>
-            <li><a href="#" target="_blank"><img src="/images/icons-footer/facebook-icon.png"></a></li>
-            <li><a href="#" target="_blank"><img src="/images/icons-footer/telegram-icon.png"></a></li>
-            <li><a href="#" target="_blank"><img src="/images/icons-footer/youtube-icon.png"></a></li>
-            <li><a href="#" target="_blank"><img src="/images/icons-footer/instagram-icon.png"></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-  <div class="container pt-20 pb-20">
-    <p class="font-11">
-      Copyright © <span id="year"></span> Custodia Generale Sacro Convento.
-      P.I. 00516830544 - C.F. 80002810549
-    </p>
-    <p class="font-11">
-      <a href="#" target="_blank">Privacy</a> | 
-      <a href="#" target="_blank">Cookie policy</a>
-    </p>
-  </div>
-</div>
-</footer>   
-
   <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
   <script src="assets/script.js"></script>
 </body>
+
 </html>
