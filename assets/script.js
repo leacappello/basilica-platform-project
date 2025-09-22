@@ -111,3 +111,87 @@ document.addEventListener("DOMContentLoaded", () => {
     slidesWrap.addEventListener("mouseleave", () => (timer = setInterval(next, 7000)));
   }
 })();
+
+// === MAIN MEDIA: lightbox per galleria ===
+(function(){
+  const galleryImages = Array.from(document.querySelectorAll('[data-gallery]'));
+
+  function ensureLightbox() {
+    let lb = document.querySelector('.lightbox');
+    if (lb) return lb;
+    lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role','dialog');
+    lb.setAttribute('aria-modal','true');
+    lb.innerHTML = `
+      <div class="lb-inner" tabindex="0">
+        <button class="lb-close" aria-label="Chiudi lightbox">&times;</button>
+        <button class="lb-nav lb-prev" aria-label="Immagine precedente">&#10094;</button>
+        <img alt="" />
+        <button class="lb-nav lb-next" aria-label="Immagine successiva">&#10095;</button>
+      </div>`;
+    document.body.appendChild(lb);
+    return lb;
+  }
+
+  const lb = ensureLightbox();
+  const lbImg = lb.querySelector('img');
+  let currentIndex = -1;
+  let currentGallery = null;
+
+  function openLightbox(index, galleryName) {
+    const items = galleryImages.filter(i => i.dataset.gallery === galleryName);
+    currentIndex = index;
+    currentGallery = galleryName;
+    const src = items[index].getAttribute('src');
+    const alt = items[index].alt || '';
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lb.classList.add('open');
+    lb.querySelector('.lb-inner').focus();
+  }
+
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lbImg.src = '';
+    currentIndex = -1;
+    currentGallery = null;
+  }
+
+  function showNext(delta) {
+    const items = galleryImages.filter(i => i.dataset.gallery === currentGallery);
+    if (!items.length) return;
+    currentIndex = (currentIndex + delta + items.length) % items.length;
+    lbImg.src = items[currentIndex].getAttribute('src');
+    lbImg.alt = items[currentIndex].alt || '';
+  }
+
+  galleryImages.forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      const galleryName = img.dataset.gallery;
+      const items = galleryImages.filter(i => i.dataset.gallery === galleryName);
+      const idx = items.indexOf(img);
+      openLightbox(idx, galleryName);
+    });
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        img.click();
+      }
+    });
+  });
+
+  lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+  lb.querySelector('.lb-prev').addEventListener('click', () => showNext(-1));
+  lb.querySelector('.lb-next').addEventListener('click', () => showNext(1));
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showNext(-1);
+    if (e.key === 'ArrowRight') showNext(1);
+  });
+})();
+// === END MAIN MEDIA ===

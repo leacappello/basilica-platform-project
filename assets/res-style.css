@@ -1,0 +1,287 @@
+/* Top Bar Prenotazioni*/
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+}
+.header .topbar {
+    background-color: #546e7a;
+    height: 40px;
+    padding: 0;
+    font-size: 14px;
+    transition: all 0.5s;
+    align-items: center;
+    display: flex;
+    margin: 0 auto;
+}
+.sticky-top {
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+}
+#topbar .container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 200px;
+
+}
+.contact-info {
+    display: flex;
+    align-items: center;
+}
+.contact-info img {display: inline-block; height: 15px; padding: 0 5px 0 10px;}
+.contact-info a, .contact-info span {color: #fff; text-decoration: none; padding-left: 10px;}
+.contact-info a:hover{color: #fff; text-decoration: underline; cursor: pointer;}
+.social-links a {color:  #b1b1b1; text-decoration: none; vertical-align: top;}
+.social-links a:hover {color: #fff; cursor: pointer; font-weight: bold;}
+.social-links img {display: inline-block; height: 25px; padding: 0 5px 0 10px;}
+
+/*Primary nav*/
+#primary_nav .primary_nav {display: flex; align-items: center; justify-content: space-between; position: relative;}
+#primary_nav .primary_nav img {height: auto; background-color: #fff;}
+#primary_nav .container {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 200px;
+    background-color: #fff;
+
+}
+#primary_nav .navmenu ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+#primary_nav .navmenu a, .navmenu a:focus {
+    font-size: 15px;
+    padding: 0 20px;
+    font-family: sans-serif;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    transition: 0.3s;
+    position: relative;
+    text-decoration: none;
+    
+}
+#primary_nav .btn-primary {
+    display: inline-block;
+    padding-right: .5rem;
+    padding-left: .5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:1.5;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #546e7a;
+    border-radius: 0.375rem;
+    background-color: #546e7a;
+
+}
+
+#about section, .section {
+    color: #444444;
+    background-color: #ffffff;
+    padding: 60px 0;
+    scroll-margin-top: 72px;
+    overflow: clip;
+    margin: 0 200px;
+}
+#about .container {
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+#about .col-1 {display: block; flex: 0 0 auto; width: 25%;}
+#about .bg-image {
+    background-image: url('https://prenotazioni.sanfrancesco.org/fotoPrenotazioni.jpg'); 
+    width: 90%; 
+    height: 78vh; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    margin: 0;
+}
+
+#about .row {display: flex; flex-wrap: wrap; margin-top: 0; margin-right: calc(-.5 * 3rem); margin-left: calc(-.5 * 3rem); padding-right: calc(3rem * .5);padding-left: calc(3rem* .5);}
+#about .col-2 {flex: 1 0 0%; text-align: center;}
+#about .btn-about-1 {
+    display: inline-block;
+    padding: 0.375rem 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:1.5;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: center;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 0.375rem;
+    background-color: #546e7a;
+}
+#about .btn-about-2 {
+    display: inline-block;
+    padding: 0.375rem 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:1.5;
+    color: #000;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: center;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 0.375rem;
+    background-color: #f8f9fa;
+}
+#about .col-3 {flex: 0 0 auto; width: 75%;}
+#about h5 {
+    display: block; 
+    margin-block-start: 1.67em; 
+    margin-block-end: 1.67em; 
+    margin-inline-start: 60px; 
+    margin-inline-end: 0px; 
+    font-variant: small-caps; 
+    text-rendering: auto;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    color: #2c4964;
+    font-weight: 500;
+    line-height: 1.2;
+
+}
+#about .row1 {
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-top: 0; 
+    margin-right: calc(.5 * 3rem); 
+    margin-left: calc(.5 * 3rem); 
+    margin-bottom: 1.5rem;
+    background-color: rgba(233,236,239,1);
+    border-color: rgba(108,117,125,1);
+    border-top: 1px solid #000000;
+}
+#about .col-4{flex: 0 0 auto; width: 33.33333333%;}
+#about .card-1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: #212529;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0.375rem;
+    border-top: 1px solid #dee2e6;
+    border-color: rgba(220,53,69,1);
+    border-width: 10px;
+    margin: 30px;
+}
+#about .card-body{flex: 1 1 auto; padding: 1rem 1rem;}
+#about .card-title{font-size: 1.25rem; margin-top: 0; font-weight: bold; font-variant: normal; margin-inline-start: 0; margin-bottom: 1rem;}
+#about .text-end{text-align: right;}
+#about .btn-primary {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height:1.5;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #546e7a;
+    border-radius: 0.375rem;
+    background-color: #546e7a;
+    user-select: none;
+}
+
+#about .col-5{flex: 0 0 auto; width: 33.33333333%; margin: 10px; padding-left: 0; padding-right: .5rem;}
+#about .row2 {
+    display: flex; 
+    flex-wrap: wrap; 
+    margin-top: 0; 
+    margin-right: calc(.5 * 3rem); 
+    margin-left: calc(.5 * 3rem); 
+    background-color: rgba(233,236,239,1);
+    border-color: rgba(108,117,125,1);
+    border-top: 1px solid #000000;
+}
+#about .card-2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: #212529;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0.375rem;
+    border-top: 1px solid #dee2e6;
+    border-color: rgba(25,135,84,1);
+    border-width: 10px;
+    margin: 30px;
+}
+#about .card-3{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: #212529;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0.375rem;
+    border-top: 1px solid #dee2e6;
+    border-color: rgba(13,113,253,1);
+    border-width: 10px;
+    margin: 30px;
+}
+#about .card-4{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    color: #212529;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0;
+    border-radius: 0.375rem;
+    border-top: 1px solid #dee2e6;
+    border-color: rgba(255,193,7,1);
+    border-width: 10px;
+    margin: 30px;
+}
