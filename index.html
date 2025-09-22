@@ -347,51 +347,65 @@
   <!-- ======================================================================
        FOOTER “mega”: 4 colonne + riga legale con anno dinamico
        ====================================================================== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container footer__grid">
-      <section>
-        <h3 class="footer__title">San Francesco Assisi</h3>
-        <p>CUSTODIA GENERALE DEL SACRO CONVENTO DI SAN FRANCESCO...</p>
-        <p>
-          <a href="mailto:info@esempio.org">info@esempio.org</a><br>
-          <a href="https://www.esempio.org">www.esempio.org</a>
-        </p>
-      </section>
+<footer id="footer" class="footer bg-black-222">
+  <div class="container pt-70 pb-40">
+    <div class="row border-bottom-black">
+      <div class="col-sm-6 col-md-3">
+        <div class="widget dark">
+					<img class="mt-10 mb-20" alt="" src="images/logofooter.png">
+					<p>CUSTODIA GENERALE DEL SACRO CONVENTO DI SAN FRANCESCO DEI FRATI MINORI CONVENTUALI</p>
+          <p>Piazza San Francesco, 2 - 06081 Assisi (PG) Italy</p>
+          <ul class="list-inline mt-5">
+            <li class="m-0 pl-10 pr-10"> <img src="images/icons-footer/letter-icon.png"> <a class="text-gray" href="#">info@sanfrancescoassisi.org</a> </li>
+            <li class="m-0 pl-10 pr-10"> <img src="images/icons-footer/globe-icon.png"> <a class="text-gray" href="https://www.sanfrancescoassisi.org">www.sanfrancescoassisi.org</a> </li>
+          </ul>
+					<p>P.I. 00516830544<br>C.F. 80002810549</p>
+        </div>
+      </div>
 
-      <section>
-        <h3 class="footer__title">Ultime notizie inserite</h3>
-        <ul class="footer__list">
-          <li><a href="#">Tempo del Creato...</a></li>
-          <li><a href="#">Professioni Temporanee</a></li>
-          <li><a href="#">Fra Simone: dodici anni di grazia</a></li>
-        </ul>
-      </section>
 
-      <section>
-        <h3 class="footer__title">I luoghi della Basilica</h3>
-        <ul class="footer__list">
-          <li><a href="#">Chiesa Superiore</a></li>
-          <li><a href="#">Chiesa Inferiore</a></li>
-          <li><a href="#">Tomba di San Francesco</a></li>
-        </ul>
-      </section>
 
-      <section>
-        <h3 class="footer__title">Orari</h3>
-        <ul class="footer__list">
-          <li>Chiesa superiore: 8.30 – 17.45</li>
-          <li>Chiesa inferiore: 6.00 – 18.30</li>
-          <li>Tomba: 6.00 – 18.00</li>
-        </ul>
-      </section>
     </div>
-
-    <div class="footer__legal">
-      <div class="container">
-        <p>Copyright © <span id="year"></span> Custodia Generale Sacro Convento — <a href="#">Privacy</a> | <a href="#">Cookie policy</a></p>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="widget dark">
+                </div>
+      </div>
+      <div class="col-md-3 col-md-offset-1">
+        <div class="widget dark">
+          <h5 class="widget-title">Contatto diretto con:</h5> 
+          <div class="text-gray">
+                        <a href="#">+(39) 075 819001 </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="widget dark">
+          <h5 class="widget-title">Siamo presenti nei social</h5>
+          <ul class="social-icons icon-dark icon-circled icon-sm">
+	          <li><a href="#" target="_blank"><img src="/images/icons-footer/whatsapp-icon.png"></a></li>
+            <li><a href="#" target="_blank"><img src="/images/icons-footer/facebook-icon.png"></a></li>
+            <li><a href="#" target="_blank"><img src="/images/icons-footer/telegram-icon.png"></a></li>
+            <li><a href="#" target="_blank"><img src="/images/icons-footer/youtube-icon.png"></a></li>
+            <li><a href="#" target="_blank"><img src="/images/icons-footer/instagram-icon.png"></a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+  <div class="container pt-20 pb-20">
+    <p class="font-11">
+      Copyright © <span id="year"></span> Custodia Generale Sacro Convento.
+      P.I. 00516830544 - C.F. 80002810549
+    </p>
+    <p class="font-11">
+      <a href="#" target="_blank">Privacy</a> | 
+      <a href="#" target="_blank">Cookie policy</a>
+    </p>
+  </div>
+</div>
+</footer>   
 
   <!-- Script frontend: toggle menu, slider, evidenziazione link, anno -->
   <script src="assets/script.js"></script>
