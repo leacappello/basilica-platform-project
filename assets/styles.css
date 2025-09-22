@@ -511,3 +511,117 @@ a:hover{text-decoration:underline}
 
 /* ============== No-JS fallback ============== */
 .no-js .nav{display:block}
+
+/* === MAIN MEDIA SECTION === */
+
+#main-media {
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#main-media .media-intro {
+  margin-bottom: 1.25rem;
+}
+#main-media h2 {
+  font-size: 1.6rem;
+  margin: 0 0 .5rem 0;
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #f8f8f8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.media-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.media-card:hover img,
+.media-card:focus-within img {
+  transform: scale(1.03);
+}
+.media-card .meta {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: .6rem .8rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 100%);
+  color: #fff;
+  font-size: .95rem;
+}
+
+figure.media-figure { margin:0; }
+figcaption { font-size: .9rem; margin-top: .4rem; color: #444; }
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.lightbox.open { display:flex; }
+.lightbox .lb-inner { position: relative; max-width: 95%; max-height: 95%; }
+.lightbox img { max-width: 100%; max-height: 85vh; display:block; margin: 0 auto; }
+.lightbox .lb-close {
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: .25rem .5rem;
+}
+.lb-prev { left: 1rem; }
+.lb-next { right: 1rem; }
+
+/* Video */
+.video-wrap {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+  overflow: hidden;
+  border-radius:8px;
+}
+.video-wrap iframe,
+.video-wrap video {
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  border:0;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #main-media { padding: 1rem; }
+  .media-card img { height: 160px; }
+}
+
+/* === END MAIN MEDIA SECTION === */
